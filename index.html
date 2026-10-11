@@ -296,6 +296,11 @@ img,video{max-width:100%;display:block}
 .btn svg{width:16px;height:16px;flex:none}
 .fb-link{display:inline-flex;align-items:center;gap:8px}
 .fb-link svg{width:16px;height:16px}
+.vn-mini{position:fixed;z-index:40;left:22px;bottom:22px;display:flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:50px;border:1px solid #ffffff2a;background:#0d1828e6;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 12px 30px #0006;font-size:12.5px;font-weight:600;transform:translateY(140px);transition:transform .6s var(--ease)}
+.vn-mini.show{transform:none}
+.vn-mini .dot{width:34px;height:34px;border-radius:50%;background:var(--wa);color:#04210f;display:grid;place-items:center;flex:none}
+.vn-mini .dot svg{width:14px;height:14px}
+.vn-mini small{display:block;font-weight:500;color:var(--muted);font-size:11px}
 .wa-float{position:fixed;z-index:40;bottom:22px;right:22px;background:var(--wa);color:#04210f;border-radius:50px;padding:14px 19px;box-shadow:0 12px 30px #0006;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;transform:translateY(120px);transition:transform .6s var(--ease)}
 .wa-float.show{transform:none}
 .wa-float svg{width:18px;height:18px}
@@ -335,6 +340,7 @@ img,video{max-width:100%;display:block}
   .wa-float{bottom:14px;right:14px}
   .footer{padding-bottom:96px}
   .wa-float .lbl{display:none}
+  .vn-mini{left:14px;bottom:14px;max-width:calc(100% - 100px)}
   .section{padding:64px 0}
   .vn{min-width:0}
   .phone{border-radius:30px;padding:8px}
@@ -593,6 +599,11 @@ img,video{max-width:100%;display:block}
   </div>
 </footer>
 
+<button class="vn-mini" id="vnMini" aria-label="Jeda voice note" tabindex="-1">
+  <span class="dot"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg></span>
+  <span class="mini-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+  <span>Voice note Naami Stable<small>Tekan untuk jeda</small></span>
+</button>
 <a class="wa-float" id="waFloat" href="https://wa.me/60132993525?text=Salam%20Naami%20Stable%2C%20saya%20ingin%20membuat%20tempahan." target="_blank" rel="noopener" aria-label="WhatsApp Naami Stable">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.1.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>
   <span class="lbl">WhatsApp</span>
@@ -725,7 +736,13 @@ img,video{max-width:100%;display:block}
     playing = p; vn.classList.toggle('playing', p);
     playBtn.setAttribute('aria-label', p ? 'Jeda voice note' : 'Main voice note');
     chatStatus.textContent = p ? 'sedang bercakap…' : 'dalam talian';
+    updateMini();
+    if (p) endAutoplay(); // only ever called from async media events, after the script has run
   };
+  // floating mini player: visible while playing and the chat player is off-screen
+  const vnMini = $('#vnMini'); let vnInView = false;
+  const updateMini = () => { const show = playing && !vnInView; vnMini.classList.toggle('show', show); vnMini.tabIndex = show ? 0 : -1; };
+  new IntersectionObserver(([e]) => { vnInView = e.isIntersecting; updateMini(); }, { threshold: .3 }).observe($('.phone'));
 
   // Try the real recording first; until it loads (or fails) the player waits for it
   let pendingAudio = null;
@@ -793,7 +810,7 @@ img,video{max-width:100%;display:block}
 
   const toggle = () => {
     if (mode === 'audio') { audio.paused ? audio.play().catch(() => {}) : audio.pause(); return; }
-    if (pendingAudio) { const a = pendingAudio; a.play().then(() => useAudio(a)).catch(() => playTts()); return; }
+    if (pendingAudio) { const a = pendingAudio; a.play().then(() => useAudio(a)).catch(e => { if (e.name !== 'NotAllowedError' && e.name !== 'AbortError') playTts(); }); return; }
     playing ? pauseTts() : playTts();
   };
   playBtn.addEventListener('click', toggle);
@@ -828,6 +845,24 @@ img,video{max-width:100%;display:block}
     if (!playing) setTimeout(toggle, reduce ? 0 : 700);
   });
   addEventListener('pagehide', () => synth && synth.cancel());
+
+  // Autoplay: browsers block sound until the visitor interacts, so the voice note
+  // starts on the first tap / click / key press anywhere on the page (once per visit).
+  // Taps on controls that already handle audio themselves are left alone.
+  const OWN_AUDIO = '#vnPlay, #vnWave, #vnSpeed, #vnMini, #heroVn, .rec-card, video';
+  const AUTOPLAY_EVENTS = ['pointerup', 'click', 'keydown'];
+  let autoplayDone = false, lastTry = 0;
+  const endAutoplay = () => { autoplayDone = true; AUTOPLAY_EVENTS.forEach(t => removeEventListener(t, firstTouch, true)); };
+  const firstTouch = e => {
+    if (autoplayDone || playing) return endAutoplay();
+    if (e.type === 'keydown' && ['Tab', 'Shift', 'Control', 'Alt', 'Meta', 'Escape'].includes(e.key)) return;
+    if (e.target.closest && e.target.closest(OWN_AUDIO)) return endAutoplay();
+    if (Date.now() - lastTry < 1000) return; // one tap fires pointerup + click
+    lastTry = Date.now();
+    toggle(); // if the browser refuses, the next tap tries again
+  };
+  AUTOPLAY_EVENTS.forEach(t => addEventListener(t, firstTouch, true));
+  vnMini.addEventListener('click', () => { if (playing) toggle(); });
   render(0);
 
   /* =========================================================
