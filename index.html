@@ -457,7 +457,7 @@ img,video{max-width:100%;display:block}
       <h2 class="heading reveal" style="--d:.08s">Dengar terus <em>daripada kami.</em></h2>
       <p class="sub reveal" style="--d:.14s">Tekan butang main untuk mendengar sapaan ringkas daripada Naami Stable — macam terima voice note di WhatsApp. Ada soalan? Rakam voice note anda sendiri di bawah dan hantar terus kepada kami.</p>
 
-      <details class="transcript reveal" style="--d:.2s">
+      <details class="transcript reveal" id="transcriptBox" style="--d:.2s">
         <summary>Baca transkrip voice note</summary>
         <p id="transcriptText"></p>
       </details>
@@ -663,6 +663,9 @@ img,video{max-width:100%;display:block}
      Otherwise falls back to the browser's speech synthesis,
      reading the script below in Malay.
      ========================================================= */
+  // Transcript of assets/voice-note.mp3, shown under "Baca transkrip".
+  // Leave empty to hide the transcript while the real recording is used.
+  const RECORDING_TRANSCRIPT = '';
   const SCRIPT = [
     'Assalamualaikum dan salam sejahtera!',
     'Terima kasih kerana singgah ke Naami Stable, di Pantai Senok, Bachok.',
@@ -710,14 +713,25 @@ img,video{max-width:100%;display:block}
     chatStatus.textContent = p ? 'sedang bercakap…' : 'dalam talian';
   };
 
-  // Try the real recording first
+  // Try the real recording first; until it loads (or fails) the player waits for it
+  let pendingAudio = null;
+  const useAudio = a => {
+    if (mode === 'audio') return;
+    if (playing) pauseTts();
+    mode = 'audio'; audio = a; pendingAudio = null; a.playbackRate = speeds[speedIdx];
+    const box = $('#transcriptBox');
+    if (RECORDING_TRANSCRIPT) transcript.textContent = RECORDING_TRANSCRIPT; else box.hidden = true;
+    setPlaying(!a.paused); render(a.currentTime / (a.duration || 1));
+  };
   (() => {
     const src = vn.dataset.src; if (!src) return;
-    const a = new Audio(); a.preload = 'metadata';
-    a.addEventListener('loadedmetadata', () => { mode = 'audio'; audio = a; render(0); });
+    const a = new Audio(); a.preload = 'metadata'; pendingAudio = a;
+    a.addEventListener('loadedmetadata', () => useAudio(a));
     a.addEventListener('timeupdate', () => mode === 'audio' && render(a.currentTime / (a.duration || 1)));
-    a.addEventListener('ended', () => { setPlaying(false); render(0); a.currentTime = 0; highlight(-1); });
-    a.addEventListener('error', () => {}); // stay in TTS mode
+    a.addEventListener('play', () => mode === 'audio' && setPlaying(true));
+    a.addEventListener('pause', () => mode === 'audio' && setPlaying(false));
+    a.addEventListener('ended', () => { setPlaying(false); a.currentTime = 0; render(0); });
+    a.addEventListener('error', () => { pendingAudio = null; }); // no recording: stay in TTS mode
     a.src = src;
   })();
 
@@ -764,9 +778,9 @@ img,video{max-width:100%;display:block}
   const pauseTts = () => { ttsGen++; synth.cancel(); stopTts(false); };
 
   const toggle = () => {
-    if (mode === 'audio') {
-      if (audio.paused) { audio.play(); setPlaying(true); } else { audio.pause(); setPlaying(false); }
-    } else playing ? pauseTts() : playTts();
+    if (mode === 'audio') { audio.paused ? audio.play().catch(() => {}) : audio.pause(); return; }
+    if (pendingAudio) { const a = pendingAudio; a.play().then(() => useAudio(a)).catch(() => playTts()); return; }
+    playing ? pauseTts() : playTts();
   };
   playBtn.addEventListener('click', toggle);
 
