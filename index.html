@@ -96,16 +96,7 @@ img,video{max-width:100%;display:block}
 .arrow{transition:transform .35s var(--ease)}
 .btn:hover .arrow{transform:translate(3px,-3px)}
 
-/* hero voice chip */
-.vn-chip{display:inline-flex;align-items:center;gap:12px;margin-top:40px;padding:8px 18px 8px 8px;border-radius:50px;background:#ffffff14;border:1px solid #ffffff2a;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:13px;transition:.35s var(--ease)}
-.vn-chip:hover{background:#ffffff24;transform:translateY(-2px)}
-.vn-chip .dot{width:38px;height:38px;border-radius:50%;background:var(--wa);display:grid;place-items:center;position:relative;color:#05210f}
-.vn-chip .dot:after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:ring 2s ease-out infinite}
 @keyframes ring{from{transform:scale(1);opacity:.9}to{transform:scale(1.8);opacity:0}}
-.mini-wave{display:flex;align-items:center;gap:3px;height:18px}
-.mini-wave i{width:3px;border-radius:3px;background:#fff;height:30%;animation:eq 1s ease-in-out infinite}
-.mini-wave i:nth-child(2){animation-delay:.15s}.mini-wave i:nth-child(3){animation-delay:.3s}.mini-wave i:nth-child(4){animation-delay:.45s}.mini-wave i:nth-child(5){animation-delay:.6s}
-@keyframes eq{50%{height:100%}}
 
 .hero-bottom{display:flex;gap:42px;margin-top:70px;color:#e4edf5;font-size:13px}
 .hero-bottom span{border-left:2px solid var(--blue);padding-left:14px}
@@ -175,75 +166,6 @@ img,video{max-width:100%;display:block}
 .package .btn{width:100%;margin-top:14px}
 .feature{border-color:#78bdeb;box-shadow:0 20px 50px #2b8fe029}
 .labeltop{position:absolute;left:14px;top:14px;z-index:2;background:var(--blue);color:#fff;font-size:10px;font-weight:700;letter-spacing:.15em;padding:7px 11px;border-radius:30px}
-
-/* voice note */
-.vn-section{background:radial-gradient(900px 500px at 85% 20%,#1b3d63 0%,transparent 60%),radial-gradient(700px 500px at 0% 100%,#0f2a44 0%,transparent 60%),var(--ink);overflow:hidden}
-.vn-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.phone{position:relative;max-width:400px;margin:auto;width:100%;border-radius:38px;padding:12px;background:linear-gradient(160deg,#2b3a4f,#0e1726);box-shadow:0 40px 90px #0009,inset 0 0 0 1px #ffffff1a}
-.phone-screen{border-radius:28px;overflow:hidden;background:#0b141a}
-.chat-top{display:flex;align-items:center;gap:11px;padding:16px 16px 12px;background:#1f2c34}
-.chat-top .av{width:38px;height:38px;border-radius:50%;background:#fff;overflow:hidden;display:grid;place-items:center;flex:none}
-.chat-top .av img{width:44px;height:44px;object-fit:cover}
-.chat-top b{font-size:14px;display:block}
-.chat-top small{font-size:11.5px;color:#8fa3ad}
-.chat-body{padding:18px 12px 22px;min-height:360px;display:flex;flex-direction:column;gap:10px;background:#0b141a radial-gradient(#ffffff08 1px,transparent 1px) 0 0/18px 18px}
-.date-chip{align-self:center;font-size:11px;color:#8fa3ad;background:#1f2c34;padding:5px 10px;border-radius:8px}
-.bubble{max-width:88%;padding:8px 10px 6px;border-radius:10px;font-size:13.5px;line-height:1.5;position:relative;opacity:0;transform:translateY(14px) scale(.96);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-.chat-body.in .bubble{opacity:1;transform:none}
-.chat-body.in .bubble:nth-child(3){transition-delay:.35s}
-.chat-body.in .bubble:nth-child(4){transition-delay:.7s}
-.chat-body.in .bubble:nth-child(5){transition-delay:1.05s}
-.bubble.them{background:#1f2c34;align-self:flex-start;border-top-left-radius:2px}
-.bubble.me{background:#005c4b;align-self:flex-end;border-top-right-radius:2px}
-.bubble time{display:block;text-align:right;font-size:10.5px;color:#ffffff8c;margin-top:2px}
-.vn{display:flex;align-items:center;gap:10px;min-width:258px;padding:4px 2px}
-.vn-play{width:42px;height:42px;flex:none;border-radius:50%;border:0;background:var(--wa);color:#04210f;display:grid;place-items:center;transition:transform .25s var(--ease)}
-.vn-play:hover{transform:scale(1.08)}
-.vn-play:active{transform:scale(.95)}
-.vn-play svg{width:18px;height:18px}
-.vn-play .i-pause,.vn.playing .vn-play .i-play{display:none}
-.vn.playing .vn-play .i-pause{display:block}
-.vn-mid{flex:1;min-width:0}
-.vn-wave{display:flex;align-items:center;gap:2px;height:30px;cursor:pointer;touch-action:none}
-.vn-wave i{flex:1;min-width:2px;border-radius:2px;background:#ffffff47;height:var(--h);transition:background .2s,transform .2s;transform-origin:center}
-.vn-wave i.on{background:var(--sky)}
-.vn.playing .vn-wave i.now{transform:scaleY(1.35)}
-.vn-meta{display:flex;justify-content:space-between;font-size:10.5px;color:#ffffffa6;margin-top:3px}
-.vn-meta .spd{border:0;background:#ffffff1f;border-radius:20px;font-size:10px;font-weight:700;padding:1px 7px}
-.vn-av{width:42px;height:42px;border-radius:50%;flex:none;background:#fff;position:relative;overflow:visible;display:grid;place-items:center}
-.vn-av img{width:42px;height:42px;border-radius:50%;object-fit:cover}
-.vn-av:after{content:"";position:absolute;right:-3px;bottom:-3px;width:16px;height:16px;border-radius:50%;background:var(--wa) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23052'%3E%3Cpath d='M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-2.1A7 7 0 0 0 19 12z'/%3E%3C/svg%3E") center/10px no-repeat;border:2px solid #1f2c34}
-.typing{display:inline-flex;gap:4px;padding:4px 2px}
-.typing i{width:6px;height:6px;border-radius:50%;background:#8fa3ad;animation:bounce 1.2s infinite}
-.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
-@keyframes bounce{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-5px);opacity:1}}
-.transcript{margin-top:22px;border:1px solid var(--line);border-radius:12px;background:#ffffff08;overflow:hidden}
-.transcript summary{padding:16px 18px;cursor:pointer;font-weight:700;font-size:14px;list-style:none;display:flex;justify-content:space-between;align-items:center}
-.transcript summary::-webkit-details-marker{display:none}
-.transcript summary:after{content:"+";font-size:20px;transition:transform .3s}
-.transcript[open] summary:after{transform:rotate(45deg)}
-.transcript p{margin:0;padding:0 18px 18px;color:var(--muted);line-height:1.8;font-size:14px}
-.transcript mark{background:none;color:#fff;border-bottom:2px solid var(--sky)}
-
-/* recorder */
-.rec-card{margin-top:22px;border-radius:16px;padding:22px;background:linear-gradient(140deg,#13283f,#0e1a2a);border:1px solid var(--line)}
-.rec-card h3{margin:0 0 6px;font-size:18px}
-.rec-card p{margin:0 0 16px;color:var(--muted);font-size:13.5px;line-height:1.7}
-.rec-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.rec-btn{width:58px;height:58px;border-radius:50%;border:0;background:#e5484d;color:#fff;display:grid;place-items:center;position:relative;flex:none;transition:transform .25s var(--ease)}
-.rec-btn svg{width:24px;height:24px}
-.rec-btn:hover{transform:scale(1.06)}
-.rec-btn.on:before{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid #e5484d;animation:ring 1.4s ease-out infinite}
-.rec-btn.on .mic,.rec-btn .stop{display:none}
-.rec-btn.on .stop{display:block}
-.rec-live{display:flex;align-items:center;gap:3px;height:34px;flex:1;min-width:120px}
-.rec-live i{flex:1;max-width:5px;border-radius:3px;background:#ffffff33;height:12%;transition:height .08s linear}
-.rec-time{font-variant-numeric:tabular-nums;font-weight:700;min-width:44px}
-.rec-out{display:none;margin-top:16px;gap:10px;flex-wrap:wrap;align-items:center}
-.rec-out.show{display:flex}
-.rec-out audio{height:38px;flex:1;min-width:200px}
-.rec-out .btn{padding:12px 16px}
-.rec-msg{font-size:12.5px;color:var(--muted);margin-top:10px;min-height:1em}
 
 /* experience */
 .experience{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
@@ -325,11 +247,14 @@ img,video{max-width:100%;display:block}
 .btn svg{width:16px;height:16px;flex:none}
 .fb-link{display:inline-flex;align-items:center;gap:8px}
 .fb-link svg{width:16px;height:16px}
-.vn-mini{position:fixed;z-index:40;left:22px;bottom:22px;display:flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:50px;border:1px solid #ffffff2a;background:#0d1828e6;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 12px 30px #0006;font-size:12.5px;font-weight:600;transform:translateY(140px);transition:transform .6s var(--ease)}
-.vn-mini.show{transform:none}
-.vn-mini .dot{width:34px;height:34px;border-radius:50%;background:var(--wa);color:#04210f;display:grid;place-items:center;flex:none}
-.vn-mini .dot svg{width:14px;height:14px}
-.vn-mini small{display:block;font-weight:500;color:var(--muted);font-size:11px}
+.sound-btn{position:fixed;z-index:40;left:22px;bottom:22px;width:48px;height:48px;border-radius:50%;border:1px solid #ffffff2e;background:#0d1828e0;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 10px 26px #0006;display:grid;place-items:center;color:#fff;opacity:0;transform:scale(.6);transition:opacity .5s,transform .5s var(--ease),background .3s}
+.ready .sound-btn{opacity:1;transform:none}
+.sound-btn:hover{transform:scale(1.08)}
+.sound-btn svg{width:20px;height:20px}
+.sound-btn .i-on,.sound-btn.on .i-off{display:none}
+.sound-btn.on .i-on{display:block}
+.sound-btn.on{background:var(--wa);color:#04210f;border-color:transparent}
+.sound-btn.on:after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:ring 1.8s ease-out infinite}
 .wa-float{position:fixed;z-index:40;bottom:22px;right:22px;background:var(--wa);color:#04210f;border-radius:50px;padding:14px 19px;box-shadow:0 12px 30px #0006;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;transform:translateY(120px);transition:transform .6s var(--ease)}
 .wa-float.show{transform:none}
 .wa-float svg{width:18px;height:18px}
@@ -346,7 +271,7 @@ img,video{max-width:100%;display:block}
   .mobile-menu{display:block}
   .nav>.pill{display:none}
   .hero-bottom{gap:18px;flex-wrap:wrap;margin-top:50px}
-  .intro-grid,.experience,.vn-grid{grid-template-columns:1fr;gap:44px}
+  .intro-grid,.experience{grid-template-columns:1fr;gap:44px}
   .intro-media .reveal-img{height:400px}
   .badge{right:12px;bottom:-30px;width:112px;height:112px}
   .cards{grid-template-columns:1fr 1fr}
@@ -374,11 +299,8 @@ img,video{max-width:100%;display:block}
   .wa-float{bottom:14px;right:14px}
   .footer{padding-bottom:96px}
   .wa-float .lbl{display:none}
-  .vn-mini{left:14px;bottom:14px;max-width:calc(100% - 100px)}
+  .sound-btn{left:14px;bottom:14px}
   .section{padding:64px 0}
-  .vn{min-width:0}
-  .phone{border-radius:30px;padding:8px}
-  .phone-screen{border-radius:23px}
   .marquee-track{font-size:18px}
   .reels{margin:34px -16px 0;padding:10px 16px 24px}
 }
@@ -400,7 +322,6 @@ img,video{max-width:100%;display:block}
     <nav class="navlinks" id="navlinks">
       <a href="#tentang">Tentang Kami</a>
       <a href="#pakej">Pakej Berkuda</a>
-      <a href="#voice-note">Voice Note</a>
       <a href="#video">Video</a>
       <a href="#galeri">Galeri</a>
       <a href="#lokasi">Lokasi</a>
@@ -423,12 +344,7 @@ img,video{max-width:100%;display:block}
       <a class="btn btn-blue" href="#pakej">TEROKAI PAKEJ <span class="arrow">↗</span></a>
       <a class="btn btn-ghost" href="https://wa.me/60132993525?text=Salam%20Naami%20Stable%2C%20saya%20ingin%20membuat%20tempahan." target="_blank" rel="noopener">TEMPAH MELALUI WHATSAPP</a>
     </div>
-    <a class="vn-chip fade-in d3" href="#voice-note" id="heroVn">
-      <span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-      <span class="mini-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-      <span>Dengar voice note daripada kami</span>
-    </a>
-    <div class="hero-bottom fade-in d4"><span>Pengalaman untuk seisi keluarga</span><span>Kelas menunggang kuda</span><span>Pengembaraan Pantai Senok</span></div>
+    <div class="hero-bottom fade-in d3"><span>Pengalaman untuk seisi keluarga</span><span>Kelas menunggang kuda</span><span>Pengembaraan Pantai Senok</span></div>
   </div>
   <a href="#tentang" class="scroll-cue" aria-label="Skrol ke bawah"></a>
 </section>
@@ -500,70 +416,6 @@ img,video{max-width:100%;display:block}
           <a class="btn btn-blue" href="https://wa.me/60132993525?text=Salam%2C%20saya%20ingin%20bertanya%20tentang%20kelas%20berkuda." target="_blank" rel="noopener">TANYA JADUAL <span class="arrow">↗</span></a>
         </div>
       </article>
-    </div>
-  </div>
-</section>
-
-<section class="section vn-section" id="voice-note">
-  <div class="wrap vn-grid">
-    <div>
-      <div class="kicker reveal" style="color:var(--sky)">VOICE NOTE</div>
-      <h2 class="heading reveal" style="--d:.08s">Dengar terus <em>daripada kami.</em></h2>
-      <p class="sub reveal" style="--d:.14s">Tekan butang main untuk mendengar sapaan ringkas daripada Naami Stable — macam terima voice note di WhatsApp. Ada soalan? Rakam voice note anda sendiri di bawah dan hantar terus kepada kami.</p>
-
-      <details class="transcript reveal" id="transcriptBox" style="--d:.2s">
-        <summary>Baca transkrip voice note</summary>
-        <p id="transcriptText"></p>
-      </details>
-
-      <div class="rec-card reveal" style="--d:.26s">
-        <h3>🎙️ Rakam voice note anda</h3>
-        <p>Tekan butang merah untuk mula merakam (maks. 60 saat), tekan sekali lagi untuk berhenti, kemudian hantar kepada kami melalui WhatsApp.</p>
-        <div class="rec-row">
-          <button class="rec-btn" id="recBtn" aria-label="Mula merakam">
-            <svg class="mic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-2.1A7 7 0 0 0 19 12z"/></svg>
-            <svg class="stop" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
-          </button>
-          <div class="rec-live" id="recLive" aria-hidden="true"></div>
-          <span class="rec-time" id="recTime">0:00</span>
-        </div>
-        <div class="rec-out" id="recOut">
-          <audio id="recAudio" controls></audio>
-          <button class="btn btn-wa" id="recSend">Hantar ke WhatsApp</button>
-          <button class="btn btn-ghost" id="recRedo">Rakam semula</button>
-        </div>
-        <div class="rec-msg" id="recMsg" role="status"></div>
-      </div>
-    </div>
-
-    <div class="reveal" style="--d:.1s">
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="chat-top">
-            <div class="av"><img src="assets/logo.jpg" alt=""></div>
-            <div><b>Naami Stable</b><small id="chatStatus">dalam talian</small></div>
-          </div>
-          <div class="chat-body" id="chatBody">
-            <span class="date-chip">HARI INI</span>
-            <div class="bubble me">Salam, nak tanya pasal pakej berkuda 🐴<time>10:02</time></div>
-            <div class="bubble them">
-              <div class="vn" id="vn" data-src="assets/voice-note.mp3">
-                <button class="vn-play" id="vnPlay" aria-label="Main voice note">
-                  <svg class="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                  <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
-                </button>
-                <div class="vn-mid">
-                  <div class="vn-wave" id="vnWave" role="slider" aria-label="Kedudukan voice note" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0"></div>
-                  <div class="vn-meta"><span id="vnTime">0:00</span><button class="spd" id="vnSpeed" aria-label="Tukar kelajuan">1×</button></div>
-                </div>
-                <div class="vn-av"><img src="assets/logo.jpg" alt=""></div>
-              </div>
-              <time>10:03</time>
-            </div>
-            <div class="bubble them" id="afterVn">Tempah terus di WhatsApp 013-299 3525 ya! 😊<time>10:03</time></div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -680,10 +532,9 @@ img,video{max-width:100%;display:block}
   </div>
 </footer>
 
-<button class="vn-mini" id="vnMini" aria-label="Jeda voice note" tabindex="-1">
-  <span class="dot"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg></span>
-  <span class="mini-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-  <span>Voice note Naami Stable<small>Tekan untuk jeda</small></span>
+<button class="sound-btn" id="soundBtn" aria-label="Hidupkan bunyi voice note" aria-pressed="false">
+  <svg class="i-off" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.6 3 2.7-2.7-1.4-1.4-2.7 2.7-2.7-2.7-1.4 1.4 2.7 2.7-2.7 2.7 1.4 1.4 2.7-2.7 2.7 2.7 1.4-1.4z"/></svg>
+  <svg class="i-on" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
 </button>
 <a class="wa-float" id="waFloat" href="https://wa.me/60132993525?text=Salam%20Naami%20Stable%2C%20saya%20ingin%20membuat%20tempahan." target="_blank" rel="noopener" aria-label="WhatsApp Naami Stable">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.1.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>
@@ -734,7 +585,7 @@ img,video{max-width:100%;display:block}
     if (!reduce) e.target.querySelectorAll('[data-count]').forEach(countUp);
     io.unobserve(e.target);
   }), { threshold: .15, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal, .chat-body').forEach(el => io.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   /* ---------- Card tilt + cursor glow (pointer devices) ---------- */
   if (!reduce && matchMedia('(hover:hover) and (pointer:fine)').matches) {
@@ -762,7 +613,7 @@ img,video{max-width:100%;display:block}
   /* ---------- Reels: muted autoplay while on screen, one with sound at a time ---------- */
   const reels = [...document.querySelectorAll('.reel')];
   const muteReels = except => reels.forEach(r => { if (r !== except) { r.querySelector('video').muted = true; r.classList.remove('unmuted'); r.querySelector('.reel-sound').setAttribute('aria-label', 'Hidupkan bunyi video'); } });
-  let onReelSound = () => {}; // set by the voice note player below
+  let onReelSound = () => {}; // set by the voice note below
   reels.forEach(r => {
     const v = r.querySelector('video'), bar = r.querySelector('.reel-bar i'), btn = r.querySelector('.reel-sound');
     v.addEventListener('play', () => r.classList.add('playing'));
@@ -783,254 +634,35 @@ img,video{max-width:100%;display:block}
     }, { threshold: .6 }).observe(v);
   });
 
-  /* =========================================================
-     VOICE NOTE PLAYER
-     Plays assets/voice-note.mp3 (a real recording) if it exists.
-     Otherwise falls back to the browser's speech synthesis,
-     reading the script below in Malay.
-     ========================================================= */
-  // Transcript of assets/voice-note.mp3, shown under "Baca transkrip".
-  // Leave empty to hide the transcript while the real recording is used.
-  const RECORDING_TRANSCRIPT = '';
-  const SCRIPT = [
-    'Assalamualaikum dan salam sejahtera!',
-    'Terima kasih kerana singgah ke Naami Stable, di Pantai Senok, Bachok.',
-    'Di sini kami sediakan Intro Ride, serendah sepuluh ringgit sahaja, sesuai untuk kanak-kanak dan yang baru nak mencuba.',
-    'Nak belajar betul-betul? Sertai kelas berkuda kami, kelas percubaan bermula lima puluh ringgit.',
-    'Dan pengalaman paling popular, Beach Outride, menunggang kuda di tepi pantai ketika matahari terbit atau terbenam.',
-    'Nak tempah? WhatsApp sahaja kami di kosong satu tiga, dua sembilan sembilan, tiga lima dua lima.',
-    'Jumpa di stable!'
-  ];
-  const transcript = $('#transcriptText');
-  transcript.innerHTML = SCRIPT.map((s, i) => `<span data-i="${i}">${s}</span>`).join(' ');
-
-  const vn = $('#vn'), wave = $('#vnWave'), playBtn = $('#vnPlay'), timeEl = $('#vnTime'), speedBtn = $('#vnSpeed'), chatStatus = $('#chatStatus');
-  const BARS = 42;
-  // deterministic "voice-like" bar heights
-  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-  for (let i = 0; i < BARS; i++) {
-    const env = Math.sin(Math.PI * (i + 1) / (BARS + 1)) * .6 + .4;
-    const b = document.createElement('i'); b.style.setProperty('--h', Math.max(14, Math.round((rnd() * .75 + .25) * env * 100)) + '%'); wave.appendChild(b);
-  }
-  const bars = [...wave.children];
-  const fmt = s => { s = Math.max(0, Math.round(s)); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; };
-  const speeds = [1, 1.5, 2]; let speedIdx = 0;
-
-  const totalChars = SCRIPT.reduce((n, s) => n + s.length + 1, 0);
-  const sentStart = SCRIPT.map((_, i) => SCRIPT.slice(0, i).reduce((n, s) => n + s.length + 1, 0));
-  const CHARS_PER_SEC = 14.5; // rough Malay speaking rate for estimates
-
-  let mode = 'tts', audio = null, playing = false;
-  let ttsPos = 0, ttsSentence = 0, ttsTimer = null, ttsClock = 0, ttsGen = 0;
-  const ttsDuration = () => totalChars / CHARS_PER_SEC / speeds[speedIdx];
-
-  const render = frac => {
-    frac = Math.min(1, Math.max(0, frac));
-    const on = Math.round(frac * BARS);
-    bars.forEach((b, i) => { b.classList.toggle('on', i < on); b.classList.toggle('now', i === on - 1 && playing); });
-    wave.setAttribute('aria-valuenow', Math.round(frac * 100));
-    const total = mode === 'audio' ? (audio.duration || 0) : ttsDuration();
-    timeEl.textContent = playing || frac > 0 ? fmt(frac * total) : fmt(total);
+  /* ---------- Voice note: plays on the first tap, small button to switch it on/off ---------- */
+  // Browsers block sound until the visitor interacts, so the voice note starts on the
+  // first tap / click / key press anywhere on the page (scrolling alone doesn't count).
+  const voice = new Audio('assets/voice-note.mp3'); voice.preload = 'auto';
+  const soundBtn = $('#soundBtn');
+  const setOn = on => {
+    soundBtn.classList.toggle('on', on); soundBtn.setAttribute('aria-pressed', on);
+    soundBtn.setAttribute('aria-label', on ? 'Matikan bunyi voice note' : 'Hidupkan bunyi voice note');
   };
-  const highlight = i => transcript.querySelectorAll('span').forEach(s => s.innerHTML = s.dataset.i == i ? `<mark>${SCRIPT[i]}</mark>` : SCRIPT[s.dataset.i]);
-  const setPlaying = p => {
-    playing = p; vn.classList.toggle('playing', p);
-    playBtn.setAttribute('aria-label', p ? 'Jeda voice note' : 'Main voice note');
-    chatStatus.textContent = p ? 'sedang bercakap…' : 'dalam talian';
-    updateMini();
-    if (p) { endAutoplay(); muteReels(); } // only ever called from async media events, after the script has run
-  };
-  // floating mini player: visible while playing and the chat player is off-screen
-  const vnMini = $('#vnMini'); let vnInView = false;
-  const updateMini = () => { const show = playing && !vnInView; vnMini.classList.toggle('show', show); vnMini.tabIndex = show ? 0 : -1; };
-  new IntersectionObserver(([e]) => { vnInView = e.isIntersecting; updateMini(); }, { threshold: .3 }).observe($('.phone'));
+  const playVoice = () => voice.play().catch(() => {});
+  voice.addEventListener('play', () => { setOn(true); endAutoplay(); muteReels(); });
+  voice.addEventListener('pause', () => setOn(false));
+  voice.addEventListener('ended', () => { setOn(false); voice.currentTime = 0; });
+  soundBtn.addEventListener('click', () => { endAutoplay(); voice.paused ? playVoice() : voice.pause(); });
+  onReelSound = () => voice.pause(); // a reel's sound stops the voice note
 
-  // Try the real recording first; until it loads (or fails) the player waits for it
-  let pendingAudio = null;
-  const useAudio = a => {
-    if (mode === 'audio') return;
-    if (playing) pauseTts();
-    mode = 'audio'; audio = a; pendingAudio = null; a.playbackRate = speeds[speedIdx];
-    const box = $('#transcriptBox');
-    if (RECORDING_TRANSCRIPT) transcript.textContent = RECORDING_TRANSCRIPT; else box.hidden = true;
-    setPlaying(!a.paused); render(a.currentTime / (a.duration || 1));
-  };
-  (() => {
-    const src = vn.dataset.src; if (!src) return;
-    const a = new Audio(); a.preload = 'metadata'; pendingAudio = a;
-    a.addEventListener('loadedmetadata', () => useAudio(a));
-    a.addEventListener('timeupdate', () => mode === 'audio' && render(a.currentTime / (a.duration || 1)));
-    a.addEventListener('play', () => mode === 'audio' && setPlaying(true));
-    a.addEventListener('pause', () => mode === 'audio' && setPlaying(false));
-    a.addEventListener('ended', () => { setPlaying(false); a.currentTime = 0; render(0); });
-    a.addEventListener('error', () => { pendingAudio = null; }); // no recording: stay in TTS mode
-    a.src = src;
-  })();
-
-  // ---- TTS fallback ----
-  const synth = window.speechSynthesis;
-  let voice = null;
-  const pickVoice = () => {
-    if (!synth) return;
-    const vs = synth.getVoices();
-    voice = vs.find(v => /^ms/i.test(v.lang)) || vs.find(v => /^id/i.test(v.lang)) || null;
-  };
-  if (synth) { pickVoice(); synth.addEventListener?.('voiceschanged', pickVoice); }
-
-  const ttsTick = () => { // smooth progress between boundary events
-    ttsClock += .1; const est = sentStart[ttsSentence] + ttsClock * CHARS_PER_SEC * speeds[speedIdx];
-    ttsPos = Math.max(ttsPos, Math.min(est, sentStart[ttsSentence] + SCRIPT[ttsSentence].length));
-    render(ttsPos / totalChars);
-  };
-  const speakFrom = (i, gen) => {
-    if (gen !== ttsGen) return;
-    if (i >= SCRIPT.length) { stopTts(true); return; }
-    ttsSentence = i; ttsClock = 0; ttsPos = sentStart[i]; highlight(i);
-    const u = new SpeechSynthesisUtterance(SCRIPT[i]);
-    u.lang = voice ? voice.lang : 'ms-MY'; if (voice) u.voice = voice;
-    u.rate = .98 * speeds[speedIdx]; u.pitch = 1.05;
-    u.onboundary = e => { if (gen === ttsGen && e.charIndex != null) { ttsPos = Math.max(ttsPos, sentStart[i] + e.charIndex); ttsClock = e.charIndex / (CHARS_PER_SEC * speeds[speedIdx]); } };
-    u.onend = () => { if (gen === ttsGen && playing) speakFrom(i + 1, gen); };
-    u.onerror = e => { if (gen === ttsGen && e.error !== 'interrupted' && e.error !== 'canceled') stopTts(false); };
-    synth.speak(u);
-  };
-  const stopTts = finished => {
-    if (finished) ttsGen++;
-    clearInterval(ttsTimer); ttsTimer = null; setPlaying(false);
-    if (finished) { ttsPos = 0; ttsSentence = 0; highlight(-1); render(0); }
-    else render(ttsPos / totalChars);
-  };
-  const playTts = (fromSentence = ttsSentence) => {
-    if (!synth) { timeEl.textContent = 'Tiada sokongan audio'; return; }
-    const gen = ++ttsGen; synth.cancel(); setPlaying(true);
-    ttsSentence = fromSentence; ttsPos = sentStart[fromSentence]; ttsClock = 0;
-    clearInterval(ttsTimer); ttsTimer = setInterval(ttsTick, 100);
-    setTimeout(() => speakFrom(fromSentence, gen), 60); // Chrome drops speak() issued right after cancel()
-  };
-  const pauseTts = () => { ttsGen++; synth.cancel(); stopTts(false); };
-
-  const toggle = () => {
-    if (mode === 'audio') { audio.paused ? audio.play().catch(() => {}) : audio.pause(); return; }
-    if (pendingAudio) { const a = pendingAudio; a.play().then(() => useAudio(a)).catch(e => { if (e.name !== 'NotAllowedError' && e.name !== 'AbortError') playTts(); }); return; }
-    playing ? pauseTts() : playTts();
-  };
-  playBtn.addEventListener('click', toggle);
-
-  // seek by tapping / dragging on the waveform
-  const seek = e => {
-    const r = wave.getBoundingClientRect(), frac = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
-    if (mode === 'audio') { if (audio.duration) audio.currentTime = frac * audio.duration; render(frac); return; }
-    const char = frac * totalChars; let i = sentStart.findIndex((s, k) => char < s + SCRIPT[k].length + 1); if (i < 0) i = SCRIPT.length - 1;
-    ttsSentence = i; ttsPos = sentStart[i]; render(ttsPos / totalChars); highlight(i);
-    if (playing) playTts(i);
-  };
-  wave.addEventListener('pointerdown', e => { wave.setPointerCapture(e.pointerId); if (mode === 'audio') seek(e); });
-  wave.addEventListener('pointermove', e => { if (mode === 'audio' && wave.hasPointerCapture(e.pointerId)) seek(e); });
-  wave.addEventListener('pointerup', e => { if (mode !== 'audio') seek(e); });
-  wave.addEventListener('keydown', e => {
-    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(); }
-    if (mode === 'audio' && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { audio.currentTime += e.key === 'ArrowRight' ? 3 : -3; }
-    if (mode === 'tts' && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { const i = Math.min(SCRIPT.length - 1, Math.max(0, ttsSentence + (e.key === 'ArrowRight' ? 1 : -1))); ttsSentence = i; ttsPos = sentStart[i]; render(ttsPos / totalChars); if (playing) playTts(i); }
-  });
-
-  speedBtn.addEventListener('click', () => {
-    speedIdx = (speedIdx + 1) % speeds.length; speedBtn.textContent = speeds[speedIdx] + '×';
-    if (mode === 'audio') audio.playbackRate = speeds[speedIdx];
-    else if (playing) playTts(ttsSentence); else render(ttsPos / totalChars);
-  });
-
-  // hero chip: scroll to the player and start it
-  $('#heroVn').addEventListener('click', e => {
-    e.preventDefault();
-    document.getElementById('voice-note').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
-    if (!playing) setTimeout(toggle, reduce ? 0 : 700);
-  });
-  addEventListener('pagehide', () => synth && synth.cancel());
-
-  // Autoplay: browsers block sound until the visitor interacts, so the voice note
-  // starts on the first tap / click / key press anywhere on the page (once per visit).
-  // Taps on controls that already handle audio themselves are left alone.
-  const OWN_AUDIO = '#vnPlay, #vnWave, #vnSpeed, #vnMini, #heroVn, .rec-card, .reel';
   const AUTOPLAY_EVENTS = ['pointerup', 'click', 'keydown'];
+  const OWN_AUDIO = '#soundBtn, .reel';
   let autoplayDone = false, lastTry = 0;
-  const endAutoplay = () => { autoplayDone = true; AUTOPLAY_EVENTS.forEach(t => removeEventListener(t, firstTouch, true)); };
-  const firstTouch = e => {
-    if (autoplayDone || playing) return endAutoplay();
+  function endAutoplay() { autoplayDone = true; AUTOPLAY_EVENTS.forEach(t => removeEventListener(t, firstTouch, true)); }
+  function firstTouch(e) {
+    if (autoplayDone) return;
     if (e.type === 'keydown' && ['Tab', 'Shift', 'Control', 'Alt', 'Meta', 'Escape'].includes(e.key)) return;
     if (e.target.closest && e.target.closest(OWN_AUDIO)) return endAutoplay();
     if (Date.now() - lastTry < 1000) return; // one tap fires pointerup + click
     lastTry = Date.now();
-    toggle(); // if the browser refuses, the next tap tries again
-  };
+    playVoice(); // if the browser refuses, the next tap tries again
+  }
   AUTOPLAY_EVENTS.forEach(t => addEventListener(t, firstTouch, true));
-  vnMini.addEventListener('click', () => { if (playing) toggle(); });
-  onReelSound = () => { if (playing) toggle(); }; // a reel's sound pauses the voice note
-  render(0);
-
-  /* =========================================================
-     VOICE NOTE RECORDER (visitor -> WhatsApp)
-     ========================================================= */
-  const recBtn = $('#recBtn'), recLive = $('#recLive'), recTime = $('#recTime'), recOut = $('#recOut'), recAudio = $('#recAudio'), recMsg = $('#recMsg');
-  const LIVE = 28; for (let i = 0; i < LIVE; i++) recLive.appendChild(document.createElement('i'));
-  const liveBars = [...recLive.children];
-  let rec = null, stream = null, chunks = [], recFile = null, recStart = 0, recRaf = 0, actx = null, recUrl = null;
-  const MAX_SEC = 60;
-  const pickMime = () => ['audio/mp4', 'audio/webm;codecs=opus', 'audio/webm', 'audio/ogg;codecs=opus'].find(t => window.MediaRecorder && MediaRecorder.isTypeSupported(t)) || '';
-
-  const stopRec = () => { if (rec && rec.state !== 'inactive') rec.stop(); };
-  const startRec = async () => {
-    recMsg.textContent = '';
-    if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) { recMsg.textContent = 'Pelayar anda tidak menyokong rakaman. Sila hantar voice note terus melalui WhatsApp.'; return; }
-    try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
-    catch { recMsg.textContent = 'Akses mikrofon ditolak. Benarkan mikrofon dalam tetapan pelayar dan cuba lagi.'; return; }
-    const mime = pickMime();
-    rec = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
-    chunks = [];
-    rec.ondataavailable = e => e.data.size && chunks.push(e.data);
-    rec.onstop = () => {
-      cancelAnimationFrame(recRaf); stream.getTracks().forEach(t => t.stop()); actx && actx.close();
-      recBtn.classList.remove('on'); recBtn.setAttribute('aria-label', 'Mula merakam'); liveBars.forEach(b => b.style.height = '12%');
-      const type = rec.mimeType || mime || 'audio/webm';
-      const ext = /mp4/.test(type) ? 'm4a' : /ogg/.test(type) ? 'ogg' : 'webm';
-      const blob = new Blob(chunks, { type });
-      recFile = new File([blob], `voice-note-naami-${Date.now()}.${ext}`, { type });
-      if (recUrl) URL.revokeObjectURL(recUrl);
-      recUrl = URL.createObjectURL(blob); recAudio.src = recUrl;
-      recOut.classList.add('show');
-      recMsg.textContent = 'Siap! Dengar semula, kemudian tekan "Hantar ke WhatsApp".';
-    };
-    // live level meter
-    actx = new (window.AudioContext || window.webkitAudioContext)();
-    const an = actx.createAnalyser(); an.fftSize = 64; actx.createMediaStreamSource(stream).connect(an);
-    const data = new Uint8Array(an.frequencyBinCount);
-    recStart = performance.now();
-    const loop = () => {
-      an.getByteFrequencyData(data);
-      liveBars.forEach((b, i) => b.style.height = Math.max(12, data[i % data.length] / 255 * 100) + '%');
-      const s = (performance.now() - recStart) / 1000; recTime.textContent = fmt(Math.floor(s));
-      if (s >= MAX_SEC) { stopRec(); return; }
-      recRaf = requestAnimationFrame(loop);
-    };
-    rec.start(); loop();
-    recBtn.classList.add('on'); recBtn.setAttribute('aria-label', 'Berhenti merakam');
-    recOut.classList.remove('show');
-    if (playing) toggle();
-    muteReels();
-  };
-  recBtn.addEventListener('click', () => rec && rec.state === 'recording' ? stopRec() : startRec());
-  $('#recRedo').addEventListener('click', () => { recOut.classList.remove('show'); recTime.textContent = '0:00'; startRec(); });
-  $('#recSend').addEventListener('click', async () => {
-    if (!recFile) return;
-    const text = 'Salam Naami Stable, ini voice note saya tentang tempahan berkuda.';
-    if (navigator.canShare && navigator.canShare({ files: [recFile] })) {
-      try { await navigator.share({ files: [recFile], text }); recMsg.textContent = 'Pilih WhatsApp dan hantar kepada 013-299 3525. Terima kasih!'; return; }
-      catch (e) { if (e.name === 'AbortError') return; }
-    }
-    // Fallback: download the file, then open the WhatsApp chat so the visitor can attach it
-    const a = document.createElement('a'); a.href = recUrl; a.download = recFile.name; document.body.appendChild(a); a.click(); a.remove();
-    recMsg.textContent = 'Fail voice note telah dimuat turun. Lampirkan fail itu dalam chat WhatsApp yang dibuka.';
-    open('https://wa.me/60132993525?text=' + encodeURIComponent(text), '_blank', 'noopener');
-  });
 })();
 </script>
 </body>
