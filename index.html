@@ -151,10 +151,6 @@ img,video{max-width:100%;display:block}
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:46px;perspective:1400px}
 .package{background:#fff;border:1px solid #e3e6e9;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 30px #10233810;transform-style:preserve-3d;transition:transform .5s var(--ease),box-shadow .5s;will-change:transform}
 .package:hover{box-shadow:0 30px 60px #10233826}
-.pic-btn{display:block;padding:0;border:0;background:#0b1422;position:relative;overflow:hidden;aspect-ratio:4/3;width:100%}
-.poster-btn .poster-bg{position:absolute;inset:0;filter:blur(22px) brightness(.55);transform:scale(1.2)}
-.poster-btn .poster-fg{position:relative;object-fit:contain;object-position:center}
-.package:hover .poster-btn img.poster-fg{transform:scale(1.03)}
 .mosaic{position:relative;display:grid;grid-template-columns:1.45fr 1fr;grid-template-rows:1fr 1fr;gap:4px;aspect-ratio:4/3;background:#0b1422}
 .tile{position:relative;overflow:hidden;border:0;padding:0;background:#13243a;cursor:zoom-in}
 .tile.t1{grid-row:span 2}
@@ -166,10 +162,6 @@ img,video{max-width:100%;display:block}
 .poster-link img{display:none}
 .price-ask{font-size:30px}
 .price-ask small{display:block;margin-top:2px}
-.pic-btn img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.2s var(--ease)}
-.package:hover .pic-btn img{transform:scale(1.06)}
-.pic-btn:after{content:"Lihat poster ⤢";z-index:2;position:absolute;right:12px;bottom:12px;background:#070d16cc;color:#fff;font-size:11px;font-weight:700;padding:7px 11px;border-radius:30px;opacity:0;transform:translateY(8px);transition:.4s var(--ease)}
-.package:hover .pic-btn:after,.pic-btn:focus-visible:after{opacity:1;transform:none}
 .package-body{padding:26px;display:flex;flex-direction:column;flex:1}
 .package h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:600;margin:0 0 10px}
 .package p{color:#66727f;font-size:13.5px;line-height:1.7;margin:0 0 4px}
@@ -424,11 +416,12 @@ img,video{max-width:100%;display:block}
         </div>
       </article>
       <article class="package reveal tilt" style="--d:.2s">
-        <button class="pic-btn poster-btn" data-lightbox="assets/poster-ride-confidence.jpg" aria-label="Lihat poster Kelas Berkuda"><img class="poster-bg" src="assets/poster-ride-confidence.jpg" alt="" loading="lazy"><img class="poster-fg" src="assets/poster-ride-confidence.jpg" alt="Poster kelas berkuda Ride Confidence" loading="lazy"></button>
+        <div class="mosaic" aria-label="Gambar Kelas Berkuda"><button class="tile t1" data-lightbox="assets/kelas-01.jpg" aria-label="Lihat gambar Kelas Berkuda dalam saiz penuh"><img class="on" src="assets/kelas-01-sm.jpg" data-full="assets/kelas-01.jpg" alt="Jurulatih membantu penunggang di atas kuda" loading="lazy"><img data-src="assets/kelas-04-sm.jpg" data-full="assets/kelas-04.jpg" alt="Penunggang di atas kuda di bawah pokok kelapa" loading="lazy"><img data-src="assets/kelas-07-sm.jpg" data-full="assets/kelas-07.jpg" alt="Kru membantu penunggang muda bersedia di atas kuda" loading="lazy"><img data-src="assets/kelas-10-sm.jpg" data-full="assets/kelas-10.jpg" alt="Penunggang memimpin kuda di kandang" loading="lazy"><img data-src="assets/kelas-13-sm.jpg" data-full="assets/kelas-13.jpg" alt="Penunggang muda menunggang kuda di laluan stable" loading="lazy"><img data-src="assets/kelas-16-sm.jpg" data-full="assets/kelas-16.jpg" alt="Penunggang menunggang kuda di laluan stable" loading="lazy"><img data-src="assets/kelas-19-sm.jpg" data-full="assets/kelas-19.jpg" alt="Penunggang berlatih di gelanggang ketika acara Joyride" loading="lazy"><img data-src="assets/kelas-22-sm.jpg" data-full="assets/kelas-22.jpg" alt="Peserta mengusap kuda poni di kandang stable" loading="lazy"></button><button class="tile t2" data-lightbox="assets/kelas-02.jpg" aria-label="Lihat gambar Kelas Berkuda dalam saiz penuh"><img class="on" src="assets/kelas-02-sm.jpg" data-full="assets/kelas-02.jpg" alt="Jurulatih Naami Stable membimbing penunggang" loading="lazy"><img data-src="assets/kelas-05-sm.jpg" data-full="assets/kelas-05.jpg" alt="Penunggang dan kuda poni berlatih di stable" loading="lazy"><img data-src="assets/kelas-08-sm.jpg" data-full="assets/kelas-08.jpg" alt="Penunggang menunggang kuda poni di laluan stable" loading="lazy"><img data-src="assets/kelas-11-sm.jpg" data-full="assets/kelas-11.jpg" alt="Penunggang menunggang kuda di tepi gelanggang" loading="lazy"><img data-src="assets/kelas-14-sm.jpg" data-full="assets/kelas-14.jpg" alt="Kru memimpin kuda kelabu untuk penunggang muda" loading="lazy"><img data-src="assets/kelas-17-sm.jpg" data-full="assets/kelas-17.jpg" alt="Penunggang memimpin kuda di gelanggang berpasir" loading="lazy"><img data-src="assets/kelas-20-sm.jpg" data-full="assets/kelas-20.jpg" alt="Penunggang tersenyum menunggang kuda di ladang kelapa" loading="lazy"><img data-src="assets/kelas-23-sm.jpg" data-full="assets/kelas-23.jpg" alt="Kru membantu penunggang bersedia di atas kuda" loading="lazy"></button><button class="tile t3" data-lightbox="assets/kelas-03.jpg" aria-label="Lihat gambar Kelas Berkuda dalam saiz penuh"><img class="on" src="assets/kelas-03-sm.jpg" data-full="assets/kelas-03.jpg" alt="Kru membetulkan peralatan untuk penunggang di paddock" loading="lazy"><img data-src="assets/kelas-06-sm.jpg" data-full="assets/kelas-06.jpg" alt="Penunggang muda menunggang kuda kelabu" loading="lazy"><img data-src="assets/kelas-09-sm.jpg" data-full="assets/kelas-09.jpg" alt="Penunggang muda menunggang kuda kelabu di gelanggang" loading="lazy"><img data-src="assets/kelas-12-sm.jpg" data-full="assets/kelas-12.jpg" alt="Penunggang di atas kuda poni di bawah pokok kelapa" loading="lazy"><img data-src="assets/kelas-15-sm.jpg" data-full="assets/kelas-15.jpg" alt="Jurulatih menerangkan cara mengendalikan kuda kepada peserta" loading="lazy"><img data-src="assets/kelas-18-sm.jpg" data-full="assets/kelas-18.jpg" alt="Peserta kelas berkumpul bersama kuda dan jurulatih" loading="lazy"><img data-src="assets/kelas-21-sm.jpg" data-full="assets/kelas-21.jpg" alt="Jurulatih memberi taklimat kepada peserta di sebelah treler kuda" loading="lazy"></button><span class="m-count" aria-hidden="true">23 foto</span></div>
         <div class="package-body">
           <h3>Kelas Berkuda</h3>
           <p class="grow">Belajar asas tunggangan, pengendalian kuda, teknik berkuda dan keselamatan dengan bimbingan.</p>
           <div class="price">RM50 <small>/ kelas percubaan 30 minit</small></div>
+          <button class="poster-link" data-lightbox="assets/poster-ride-confidence.jpg"><img src="assets/poster-ride-confidence.jpg" alt="Poster kelas berkuda Ride Confidence">Lihat poster ⤢</button>
           <div class="extra">Kelas harian <b>RM75</b> / 1 jam<br>Pakej 10 kelas <b>RM700</b> + percuma 1× Beach Outride</div>
           <a class="btn btn-blue" href="https://wa.me/60132993525?text=Salam%2C%20saya%20ingin%20bertanya%20tentang%20kelas%20berkuda." target="_blank" rel="noopener">TANYA JADUAL <span class="arrow">↗</span></a>
         </div>
