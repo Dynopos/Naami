@@ -154,7 +154,14 @@ img,video{max-width:100%;display:block}
 .pic-btn{display:block;padding:0;border:0;background:#0b1422;position:relative;overflow:hidden;aspect-ratio:4/5;width:100%}
 .pic-btn img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.2s var(--ease)}
 .package:hover .pic-btn img{transform:scale(1.06)}
-.pic-btn:after{content:"Lihat poster ⤢";position:absolute;right:12px;bottom:12px;background:#070d16cc;color:#fff;font-size:11px;font-weight:700;padding:7px 11px;border-radius:30px;opacity:0;transform:translateY(8px);transition:.4s var(--ease)}
+.slides img.slide{position:absolute;inset:0;opacity:0;object-position:center 35%;transform:scale(1.02);transition:opacity 1.2s ease,transform 7s linear}
+.slides img.slide.on{opacity:1;transform:scale(1.1)}
+.slides img.slide-poster{object-position:top}
+.slides:after{content:"Lihat gambar ⤢"}
+.slide-dots{position:absolute;left:14px;bottom:16px;z-index:2;display:flex;gap:5px}
+.slide-dots i{width:6px;height:6px;border-radius:6px;background:#ffffff80;transition:width .4s var(--ease),background .4s}
+.slide-dots i.on{width:18px;background:#fff}
+.pic-btn:after{content:"Lihat poster ⤢";z-index:2;position:absolute;right:12px;bottom:12px;background:#070d16cc;color:#fff;font-size:11px;font-weight:700;padding:7px 11px;border-radius:30px;opacity:0;transform:translateY(8px);transition:.4s var(--ease)}
 .package:hover .pic-btn:after,.pic-btn:focus-visible:after{opacity:1;transform:none}
 .package-body{padding:26px;display:flex;flex-direction:column;flex:1}
 .package h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:600;margin:0 0 10px}
@@ -400,7 +407,7 @@ img,video{max-width:100%;display:block}
       <div class="stat-row reveal" style="--d:.3s">
         <div><strong>RM<span data-count="10">10</span></strong><small>Harga bermula</small></div>
         <div><strong><span data-count="3">3</span> pilihan</strong><small>Pengalaman utama</small></div>
-        <div><strong><span data-count="6">6</span> km</strong><small>Beach Outride</small></div>
+        <div><strong><span data-count="12">12</span> km</strong><small>Beach Outride</small></div>
       </div>
     </div>
   </div>
@@ -417,7 +424,7 @@ img,video{max-width:100%;display:block}
     </div>
     <div class="cards">
       <article class="package reveal tilt">
-        <button class="pic-btn" data-lightbox="assets/poster-intro-ride.jpg" aria-label="Lihat poster Intro Ride"><img src="assets/poster-intro-ride.jpg" alt="Poster Intro Ride Naami Stable" loading="lazy"></button>
+        <button class="pic-btn slides" data-lightbox="assets/intro-ride-01.jpg" aria-label="Lihat gambar Intro Ride"><img class="slide on" src="assets/intro-ride-01-sm.jpg" data-full="assets/intro-ride-01.jpg" alt="Kanak-kanak menunggang kuda dipimpin kru Naami Stable" loading="lazy"><img class="slide" src="assets/intro-ride-02-sm.jpg" data-full="assets/intro-ride-02.jpg" alt="Pengunjung menunggang kuda di paddock dipimpin kru" loading="lazy"><img class="slide" src="assets/intro-ride-03-sm.jpg" data-full="assets/intro-ride-03.jpg" alt="Pengunjung menunggang kuda dipimpin kru Naami Stable" loading="lazy"><img class="slide" src="assets/intro-ride-04-sm.jpg" data-full="assets/intro-ride-04.jpg" alt="Kanak-kanak kecil menunggang kuda poni dengan bantuan kru" loading="lazy"><img class="slide" src="assets/intro-ride-05-sm.jpg" data-full="assets/intro-ride-05.jpg" alt="Pengunjung bergambar di atas kuda di Naami Stable" loading="lazy"><img class="slide" src="assets/intro-ride-06-sm.jpg" data-full="assets/intro-ride-06.jpg" alt="Pengunjung menunggang kuda dipimpin dua kru" loading="lazy"><img class="slide" src="assets/intro-ride-07-sm.jpg" data-full="assets/intro-ride-07.jpg" alt="Kru membetulkan sanggur kuda untuk pengunjung" loading="lazy"><img class="slide" src="assets/intro-ride-08-sm.jpg" data-full="assets/intro-ride-08.jpg" alt="Pengunjung menunggang kuda mengelilingi paddock" loading="lazy"><img class="slide slide-poster" src="assets/poster-intro-ride.jpg" data-full="assets/poster-intro-ride.jpg" alt="Poster Intro Ride Naami Stable" loading="lazy"><span class="slide-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
         <div class="package-body">
           <h3>Intro Ride</h3>
           <p class="grow">Pengalaman pertama menunggang kuda. Sesuai untuk kanak-kanak dan pengunjung yang ingin mencuba. Maksimum 5–6 orang setiap sesi.</p>
@@ -431,7 +438,7 @@ img,video{max-width:100%;display:block}
         <div class="package-body">
           <h3>Beach Outride</h3>
           <p class="grow">Menunggang di pesisir Pantai Senok ketika matahari terbit atau terbenam. Termasuk minuman ringan serta peluang merakam gambar dan video sendiri. Maksimum 2–3 penunggang.</p>
-          <div class="price">RM150 <small>/ 2 jam atau 6 km</small></div>
+          <div class="price">RM150 <small>/ 2 jam atau 12 km</small></div>
           <a class="btn btn-blue" href="https://wa.me/60132993525?text=Salam%2C%20saya%20ingin%20tempah%20Beach%20Outride%20RM150." target="_blank" rel="noopener">TEMPAH PAKEJ <span class="arrow">↗</span></a>
         </div>
       </article>
@@ -650,12 +657,29 @@ img,video{max-width:100%;display:block}
     addEventListener('pointermove', e => glow.style.transform = `translate(${e.clientX}px,${e.clientY}px)`, { passive: true });
   }
 
+  /* ---------- Intro Ride photo slideshow (only runs while on screen) ---------- */
+  document.querySelectorAll('.slides').forEach(box => {
+    const slides = [...box.querySelectorAll('.slide')], dots = [...box.querySelectorAll('.slide-dots i')];
+    let idx = 0, timer = null, hover = false;
+    const show = n => {
+      slides[idx].classList.remove('on'); dots[idx].classList.remove('on');
+      idx = (n + slides.length) % slides.length;
+      slides[idx].classList.add('on'); dots[idx].classList.add('on');
+      box.dataset.lightbox = slides[idx].dataset.full; // the lightbox opens the photo being shown
+    };
+    const start = () => { if (!timer && !reduce) timer = setInterval(() => { if (!hover) show(idx + 1); }, 3500); };
+    const stop = () => { clearInterval(timer); timer = null; };
+    box.addEventListener('pointerenter', () => hover = true);
+    box.addEventListener('pointerleave', () => hover = false);
+    new IntersectionObserver(([e]) => e.isIntersecting ? start() : stop(), { threshold: .3 }).observe(box);
+  });
+
   /* ---------- Lightbox ---------- */
   const lb = $('#lightbox'), lbImg = $('#lbImg');
   let lastFocus;
   const closeLb = () => { lb.classList.remove('open'); lastFocus && lastFocus.focus(); };
   document.querySelectorAll('[data-lightbox]').forEach(b => b.addEventListener('click', () => {
-    lastFocus = b; lbImg.src = b.dataset.lightbox; lbImg.alt = b.querySelector('img').alt; lb.classList.add('open'); $('#lbClose').focus();
+    lastFocus = b; lbImg.src = b.dataset.lightbox; lbImg.alt = (b.querySelector('img.on') || b.querySelector('img')).alt; lb.classList.add('open'); $('#lbClose').focus();
   }));
   lb.addEventListener('click', e => { if (e.target !== lbImg) closeLb(); });
   addEventListener('keydown', e => { if (e.key === 'Escape') { if (lb.classList.contains('open')) closeLb(); else setMenu(false); } });
