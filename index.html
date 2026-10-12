@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#070d16">
-<meta name="description" content="Naami Stable, Pantai Senok, Bachok, Kelantan. Intro Ride, kelas berkuda, Beach Outride dan sewa kuda endurance. Tempah melalui WhatsApp.">
+<meta name="description" content="Naami Stable, Pantai Senok, Bachok, Kelantan. Intro Ride, kelas berkuda, Beach Outride, sewa kuda endurance serta sewa float dan penghantaran kuda. Tempah melalui WhatsApp.">
 <meta property="og:title" content="Naami Stable | Pengalaman Berkuda di Pantai Senok">
-<meta property="og:description" content="Intro Ride RM10, Kelas Berkuda, Beach Outride dan sewa kuda endurance di Pantai Senok, Kelantan.">
+<meta property="og:description" content="Intro Ride RM10, Kelas Berkuda, Beach Outride, sewa kuda endurance dan sewa float kuda di Pantai Senok, Kelantan.">
 <meta property="og:image" content="assets/horse-stable.jpg">
 <title>Naami Stable | Pengalaman Berkuda di Pantai Senok</title>
 <link rel="icon" href="assets/logo.jpg">
@@ -51,7 +51,8 @@ img,video{max-width:100%;display:block}
 .brand-mark img{width:56px;height:56px;object-fit:cover}
 .brand strong{font-family:'Playfair Display',serif;font-size:19px;letter-spacing:.06em;display:block}
 .brand small{display:block;color:#b6c2d0;font-size:10px;letter-spacing:.24em;margin-top:3px}
-.navlinks{display:flex;align-items:center;gap:30px;font-size:13px}
+.navlinks{display:flex;align-items:center;gap:30px;font-size:13px;white-space:nowrap}
+.brand strong{white-space:nowrap}
 .navlinks a{position:relative;padding:6px 0}
 .navlinks a:after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--sky);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
 .navlinks a:hover:after{transform:scaleX(1);transform-origin:left}
@@ -154,6 +155,15 @@ img,video{max-width:100%;display:block}
 .mosaic{position:relative;display:grid;grid-template-columns:1.45fr 1fr;grid-template-rows:1fr 1fr;gap:4px;aspect-ratio:4/3;background:#0b1422}
 .tile{position:relative;overflow:hidden;border:0;padding:0;background:#13243a;cursor:zoom-in}
 .tile.t1{grid-row:span 2}
+.package.wide{grid-column:1/-1;flex-direction:row}
+.package.wide .mosaic{flex:0 0 56%;aspect-ratio:auto;min-height:380px}
+.package.wide .package-body{justify-content:center;padding:34px}
+.labeltop-inline{align-self:flex-start;background:var(--blue);color:#fff;font-size:10px;font-weight:700;letter-spacing:.15em;padding:6px 10px;border-radius:30px;margin-bottom:12px}
+.ticks{list-style:none;padding:0;margin:10px 0 4px;display:grid;gap:7px;font-size:13.5px;color:#3f4f5f}
+.ticks li{padding-left:24px;position:relative}
+.package p.tagline{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:#117fce;font-size:16px;margin:6px 0 0}
+.ticks li:before{content:"✓";position:absolute;left:0;top:0;width:17px;height:17px;border-radius:50%;background:#e3f1fc;color:#117fce;font-size:11px;font-weight:700;display:grid;place-items:center}
+[id]{scroll-margin-top:84px}
 .tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity .9s ease,transform 6s ease}
 .tile img.on{opacity:1;transform:scale(1)}
 .tile:hover img.on{transform:scale(1.05);transition:opacity .9s ease,transform 1s var(--ease)}
@@ -269,6 +279,12 @@ img,video{max-width:100%;display:block}
 .glow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;background:radial-gradient(circle,#2b8fe02a,transparent 65%);pointer-events:none;z-index:1;transition:opacity .4s;opacity:0}
 @media(hover:hover) and (pointer:fine){.glow{opacity:1}}
 
+@media(min-width:901px) and (max-width:1200px){
+  .navlinks{gap:16px;font-size:12.5px}
+}
+@media(min-width:901px) and (max-width:1100px){
+  .nav>.pill{display:none}
+}
 @media(max-width:900px){
   .nav{height:72px}.scrolled .nav{height:64px}
   .brand strong{font-size:16px}
@@ -298,6 +314,9 @@ img,video{max-width:100%;display:block}
   .hero p.lead{font-size:15px}
   .hero-bottom{font-size:11.5px}
   .cards{grid-template-columns:1fr}
+  .package.wide{flex-direction:column}
+  .package.wide .mosaic{flex:none;aspect-ratio:4/3;min-height:0}
+  .package.wide .package-body{padding:26px}
   .stat-row{gap:12px}.stat-row strong{font-size:20px}
   .benefits{gap:8px}.benefits div{padding:14px}
   .gallery{grid-template-rows:240px 170px 170px;gap:8px}
@@ -329,6 +348,7 @@ img,video{max-width:100%;display:block}
       <a href="#tentang">Tentang Kami</a>
       <a href="#pakej">Pakej Berkuda</a>
       <a href="#endurance">Endurance</a>
+      <a href="#float">Float Kuda</a>
       <a href="#video">Video</a>
       <a href="#galeri">Galeri</a>
       <a href="#lokasi">Lokasi</a>
@@ -377,7 +397,7 @@ img,video{max-width:100%;display:block}
       <p class="reveal" style="--d:.22s">Sama ada pertama kali mencuba atau ingin meningkatkan kemahiran berkuda, kami menyediakan pilihan pengalaman mengikut minat anda.</p>
       <div class="stat-row reveal" style="--d:.3s">
         <div><strong>RM<span data-count="10">10</span></strong><small>Harga bermula</small></div>
-        <div><strong><span data-count="4">4</span> pakej</strong><small>Pengalaman berkuda</small></div>
+        <div><strong><span data-count="5">5</span> pakej</strong><small>Pengalaman berkuda</small></div>
         <div><strong><span data-count="12">12</span> km</strong><small>Beach Outride</small></div>
       </div>
     </div>
@@ -429,10 +449,25 @@ img,video{max-width:100%;display:block}
       <article class="package reveal tilt" id="endurance" style="--d:.3s">
         <div class="mosaic" aria-label="Gambar Sewa Kuda Endurance"><button class="tile t1" data-lightbox="assets/endurance-01.jpg" aria-label="Lihat gambar Sewa Kuda Endurance dalam saiz penuh"><img class="on" src="assets/endurance-01-sm.jpg" data-full="assets/endurance-01.jpg" alt="Penunggang endurance bersama kuda coklat di laluan hutan" loading="lazy"><img data-src="assets/endurance-04-sm.jpg" data-full="assets/endurance-04.jpg" alt="Penunggang di atas kuda kelabu di sebelah tong air ketika acara endurance" loading="lazy"><img data-src="assets/endurance-07-sm.jpg" data-full="assets/endurance-07.jpg" alt="Penunggang endurance dan kuda pada waktu malam" loading="lazy"><img data-src="assets/endurance-10-sm.jpg" data-full="assets/endurance-10.jpg" alt="Kuda diberi minum oleh kru semasa acara endurance" loading="lazy"></button><button class="tile t2" data-lightbox="assets/endurance-02.jpg" aria-label="Lihat gambar Sewa Kuda Endurance dalam saiz penuh"><img class="on" src="assets/endurance-02-sm.jpg" data-full="assets/endurance-02.jpg" alt="Penunggang dan kuda kelabu di tempat menyejukkan kuda ketika acara endurance" loading="lazy"><img data-src="assets/endurance-05-sm.jpg" data-full="assets/endurance-05.jpg" alt="Penunggang endurance menunggang kuda coklat gelap di laluan tanah" loading="lazy"><img data-src="assets/endurance-08-sm.jpg" data-full="assets/endurance-08.jpg" alt="Kru memberi kuda minum ketika acara endurance" loading="lazy"><img data-src="assets/endurance-11-sm.jpg" data-full="assets/endurance-11.jpg" alt="Penunggang endurance bersama kuda di laluan berlumpur" loading="lazy"></button><button class="tile t3" data-lightbox="assets/endurance-03.jpg" aria-label="Lihat gambar Sewa Kuda Endurance dalam saiz penuh"><img class="on" src="assets/endurance-03-sm.jpg" data-full="assets/endurance-03.jpg" alt="Penunggang muda bersama kuda di laluan acara endurance" loading="lazy"><img data-src="assets/endurance-06-sm.jpg" data-full="assets/endurance-06.jpg" alt="Kru menyejukkan kuda di tempat rehat acara endurance" loading="lazy"><img data-src="assets/endurance-09-sm.jpg" data-full="assets/endurance-09.jpg" alt="Penunggang endurance bersama kuda di laluan selepas hujan" loading="lazy"></button><span class="m-count" aria-hidden="true">11 foto</span></div>
         <div class="package-body">
+          <span class="labeltop-inline">40KM &amp; 80KM</span>
           <h3>Sewa Kuda Endurance</h3>
-          <p class="grow">Ingin menyertai acara endurance? Naami Stable menyediakan kuda untuk disewa bagi acara endurance. Hubungi kami untuk maklumat kuda, jadual dan syarat penyewaan.</p>
+          <p>Mencari kuda endurance yang berpengalaman dan mempunyai rekod prestasi yang baik? Kami sedia membantu! 💪🏻🏆</p>
+          <ul class="ticks"><li>Kuda berpengalaman dengan rekod yang bagus</li><li>Pilihan untuk endurance 40KM &amp; 80KM</li><li>Bersama crew Team Naami yang mesra, supportive dan sentiasa bersedia membantu</li></ul>
+          <p class="grow">Bukan sekadar sewa kuda, tetapi pengalaman endurance yang lebih selesa dan bermakna bersama team kami. ❤️</p>
+          <p class="tagline">TEAM NAAMI — Your Endurance Partner! 🐎🔥</p>
+          <div class="price price-ask">Hubungi kami <small>/ untuk pertanyaan &amp; maklumat lanjut</small></div>
+          <a class="btn btn-blue" href="https://wa.me/60132993525?text=Salam%20Team%20Naami%2C%20saya%20berminat%20untuk%20booking%20sewa%20kuda%20endurance%20(40KM%20%2F%2080KM)." target="_blank" rel="noopener">BOOKING SEKARANG <span class="arrow">↗</span></a>
+        </div>
+      </article>
+      <article class="package wide reveal tilt-off" id="float" style="--d:.1s">
+        <div class="mosaic" aria-label="Gambar float kuda"><button class="tile t1" data-lightbox="assets/float-01.jpg" aria-label="Lihat gambar float kuda dalam saiz penuh"><img class="on" src="assets/float-01-sm.jpg" data-full="assets/float-01.jpg" alt="Kuda di sebelah float pengangkutan kuda Naami Stable" loading="lazy"></button><button class="tile t2" data-lightbox="assets/float-02.jpg" aria-label="Lihat gambar float kuda dalam saiz penuh"><img class="on" src="assets/float-02-sm.jpg" data-full="assets/float-02.jpg" alt="Float kuda ditunda pacuan empat roda di tapak acara" loading="lazy"></button><button class="tile t3" data-lightbox="assets/float-03.jpg" aria-label="Lihat gambar float kuda dalam saiz penuh"><img class="on" src="assets/float-03-sm.jpg" data-full="assets/float-03.jpg" alt="Pacuan empat roda dan float kuda di kawasan stable" loading="lazy"></button><span class="m-count" aria-hidden="true">3 foto</span></div>
+        <div class="package-body">
+          <span class="labeltop-inline">PERKHIDMATAN BARU</span>
+          <h3>Sewa Float Kuda &amp; Penghantaran</h3>
+          <p class="grow">Float kuda untuk disewa serta perkhidmatan penghantaran kuda ke seluruh Semenanjung Malaysia. Float kami memuatkan sehingga 4 ekor kuda besar.</p>
+          <ul class="ticks"><li>Muat 4 ekor kuda besar</li><li>Penghantaran seluruh Semenanjung Malaysia</li><li>Sewa float atau termasuk penghantaran</li></ul>
           <div class="price price-ask">Hubungi kami <small>/ untuk harga &amp; info lanjut</small></div>
-          <a class="btn btn-blue" href="https://wa.me/60132993525?text=Salam%20Naami%20Stable%2C%20saya%20ingin%20bertanya%20tentang%20sewa%20kuda%20untuk%20endurance." target="_blank" rel="noopener">TANYA HARGA <span class="arrow">↗</span></a>
+          <a class="btn btn-blue" href="https://wa.me/60132993525?text=Salam%20Naami%20Stable%2C%20saya%20ingin%20bertanya%20tentang%20sewa%20float%20kuda%20dan%20penghantaran%20kuda." target="_blank" rel="noopener">TANYA HARGA <span class="arrow">↗</span></a>
         </div>
       </article>
     </div>
@@ -591,6 +626,12 @@ img,video{max-width:100%;display:block}
   const setMenu = open => { navlinks.classList.toggle('open', open); topbar.classList.toggle('menu-open', open); menuBtn.setAttribute('aria-expanded', open); menuBtn.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu'); document.body.style.overflow = open ? 'hidden' : ''; };
   menuBtn.addEventListener('click', () => setMenu(!navlinks.classList.contains('open')));
   navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  // In-page links: finish the target's reveal animation first so the scroll lands below the fixed header
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', () => {
+    const t = a.getAttribute('href').length > 1 && document.querySelector(a.getAttribute('href'));
+    if (!t || !t.classList.contains('reveal') || t.classList.contains('in')) return;
+    t.style.transition = 'none'; t.classList.add('in'); void t.offsetHeight; t.style.transition = '';
+  }, true));
 
   /* ---------- Scroll reveal + counters ---------- */
   const countUp = el => {
