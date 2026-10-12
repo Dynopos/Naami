@@ -7,7 +7,7 @@
 <meta name="description" content="Naami Stable, Pantai Senok, Bachok, Kelantan. Intro Ride, kelas berkuda, Beach Outride, sewa kuda endurance serta sewa float dan penghantaran kuda. Tempah melalui WhatsApp.">
 <meta property="og:title" content="Naami Stable | Pengalaman Berkuda di Pantai Senok">
 <meta property="og:description" content="Intro Ride RM10, Kelas Berkuda, Beach Outride, sewa kuda endurance dan sewa float kuda di Pantai Senok, Kelantan.">
-<meta property="og:image" content="assets/horse-stable.jpg">
+<meta property="og:image" content="assets/anthem-02.jpg">
 <title>Naami Stable | Pengalaman Berkuda di Pantai Senok</title>
 <link rel="icon" href="assets/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,6 +70,10 @@ img,video{max-width:100%;display:block}
 .hero{min-height:100vh;min-height:100svh;position:relative;display:flex;align-items:center;isolation:isolate;overflow:hidden}
 .hero-bg{position:absolute;left:-6%;top:-6%;z-index:-2;width:112%;height:112%;max-width:none;object-fit:cover;object-position:center 40%;filter:saturate(.8);animation:kenburns 22s ease-in-out infinite alternate;will-change:transform}
 @keyframes kenburns{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.12) translate3d(-2%,-1%,0)}}
+.hero-anthem{object-position:72% 45%;filter:saturate(.95)}
+.hero h1 em.gold{color:#e6c36a}
+.champ-chip{display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;padding:9px 16px;border-radius:40px;background:#e6c36a1f;border:1px solid #e6c36a80;color:#f3dc9a;font-size:12.5px;font-weight:700;letter-spacing:.04em;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:.35s var(--ease)}
+.champ-chip:hover{background:#e6c36a33;transform:translateY(-2px)}
 .hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#070d16 0%,#070d16e6 30%,#070d1670 60%,#070d1630 100%),linear-gradient(0deg,#070d16 0%,transparent 40%)}
 .hero-content{padding-top:120px;padding-bottom:110px;width:100%}
 .eyebrow{color:var(--sky);font-size:12px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;display:flex;align-items:center;gap:13px}
@@ -183,6 +187,48 @@ img,video{max-width:100%;display:block}
 .feature{border-color:#78bdeb;box-shadow:0 20px 50px #2b8fe029}
 .labeltop{position:absolute;left:14px;top:14px;z-index:2;background:var(--blue);color:#fff;font-size:10px;font-weight:700;letter-spacing:.15em;padding:7px 11px;border-radius:30px}
 
+/* anthem mi */
+.anthem{background:radial-gradient(700px 400px at 15% 30%,#3a2f12 0%,transparent 60%),linear-gradient(180deg,#0b1422,#070d16);border-bottom:1px solid #ffffff12}
+.anthem-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.anthem-mosaic{border-radius:16px;overflow:hidden;box-shadow:0 0 0 1px #e6c36a55,0 30px 70px #0009}
+.anthem-chip{position:absolute;left:12px;top:12px;background:#e6c36a;color:#1a1408;font-size:11px;font-weight:700;letter-spacing:.08em;padding:7px 12px;border-radius:30px;pointer-events:none}
+.anthem .heading em{color:#e6c36a}
+.anthem .sub b{color:#fff}
+.anthem-facts{margin:22px 0 4px;display:grid;grid-template-columns:1fr 1fr;column-gap:28px;max-width:640px}
+.anthem-facts div{display:grid;gap:3px;padding:10px 0;border-top:1px solid #ffffff1a}
+.anthem-facts dt{color:#e6c36a;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.anthem-facts dd{margin:0;color:#e5ebf2;font-size:13.5px;line-height:1.6}
+.anthem-more{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;margin-top:56px;align-items:start}
+.titles,.breeding{border:1px solid #e6c36a55;border-radius:18px;padding:28px;background:linear-gradient(160deg,#e6c36a14,#ffffff05)}
+.titles h3,.breeding h3{font-family:'Playfair Display',serif;font-weight:600;font-size:24px;margin:0 0 16px;color:#fff}
+.titles ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.titles li{display:flex;gap:14px;align-items:center;padding:12px 14px;border-radius:12px;background:#ffffff08;color:#fff;font-weight:600;font-size:14.5px}
+.titles li span{font-size:24px;width:36px;text-align:center}
+.titles li small{display:block;color:#e6c36a;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.br-label{font-size:10.5px;letter-spacing:.18em;color:#e6c36a;font-weight:700}
+.breeding h3{margin:8px 0 6px}
+.br-price{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:#e6c36a;line-height:1.1}
+.br-price small{font-family:'DM Sans',sans-serif;font-size:16px;color:#e5ebf2;font-weight:600}
+.br-free{margin:14px 0 4px;padding:12px 14px;border-radius:12px;background:#e6c36a;color:#1a1408;font-weight:700;font-size:15px}
+.br-free b{font-size:18px;letter-spacing:.04em}
+.br-free small{display:block;font-weight:600;font-size:11px;opacity:.8;margin-top:2px}
+.br-inc-h{margin:18px 0 8px;color:#e6c36a;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+.br-inc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.br-inc li{background:#ffffff0d;border-radius:10px;padding:10px 12px;font-size:13.5px;color:#e5ebf2}
+.br-loc{color:var(--muted);font-size:13px;margin:16px 0 4px}
+.br-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.br-poster{color:#e6c36a;margin-top:14px}
+.hero-bottom a{color:inherit;border-bottom:1px dashed #e6c36a99}
+.reg{grid-column:1/-1;border:1px solid #e6c36a55;border-radius:18px;padding:28px;background:#ffffff05}
+.reg h3{font-family:'Playfair Display',serif;font-weight:600;font-size:24px;margin:0 0 14px;color:#fff}
+.reg dl{margin:0;display:grid;grid-template-columns:repeat(3,1fr);column-gap:26px}
+.reg dl div{padding:10px 0;border-top:1px solid #ffffff1a}
+.reg dl div.wide{grid-column:span 2}
+.reg dt{color:#e6c36a;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.reg dd{margin:3px 0 0;color:#e5ebf2;font-size:13.5px;line-height:1.55;word-break:break-word}
+.btn-gold{background:#e6c36a;color:#1a1408}
+.btn-gold:hover{background:#f0d488;transform:translateY(-3px)}
+
 /* experience */
 .experience{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
 .benefits{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
@@ -279,8 +325,13 @@ img,video{max-width:100%;display:block}
 .glow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;background:radial-gradient(circle,#2b8fe02a,transparent 65%);pointer-events:none;z-index:1;transition:opacity .4s;opacity:0}
 @media(hover:hover) and (pointer:fine){.glow{opacity:1}}
 
+@media(min-width:901px){
+  .navlinks{gap:18px;font-size:12.5px}
+  .navlinks .fb-link{display:none}
+  .brand small{letter-spacing:.16em}
+}
 @media(min-width:901px) and (max-width:1200px){
-  .navlinks{gap:16px;font-size:12.5px}
+  .navlinks{gap:14px}
 }
 @media(min-width:901px) and (max-width:1100px){
   .nav>.pill{display:none}
@@ -299,7 +350,10 @@ img,video{max-width:100%;display:block}
   .cards{grid-template-columns:1fr 1fr}
   .gallery{grid-template-columns:1fr 1fr;grid-template-rows:280px 200px 200px}
   .exp-media{height:380px}
-  .reels{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;margin:40px -28px 0;padding:10px 28px 24px;scrollbar-width:none}
+  .anthem-more{grid-template-columns:1fr}
+  .reg dl{grid-template-columns:1fr 1fr}
+  .anthem-grid{grid-template-columns:1fr;gap:30px}
+      .reels{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;margin:40px -28px 0;padding:10px 28px 24px;scrollbar-width:none}
   .reels::-webkit-scrollbar{display:none}
   .reel{flex:0 0 min(72%,280px);scroll-snap-align:center}
   .reel:nth-child(2){margin-top:0}
@@ -327,6 +381,14 @@ img,video{max-width:100%;display:block}
   .sound-btn{left:14px;bottom:14px}
   .section{padding:64px 0}
   .marquee-track{font-size:18px}
+  .anthem-facts{grid-template-columns:1fr}
+  .br-inc{grid-template-columns:1fr}
+  .reg dl{grid-template-columns:1fr 1fr;column-gap:16px}
+  .reg dl div.wide{grid-column:1/-1}
+  .reg dd{font-size:13px}
+  .reg{padding:22px}
+  .br-price{font-size:42px}
+  .titles,.breeding{padding:22px}
   .reels{margin:34px -16px 0;padding:10px 16px 24px}
 }
 @media(prefers-reduced-motion:reduce){
@@ -345,6 +407,8 @@ img,video{max-width:100%;display:block}
   <div class="wrap nav">
     <a href="#utama" class="brand"><div class="brand-mark"><img src="assets/logo.jpg" alt="Logo Naami Stable"></div><div><strong>NAAMI STABLE</strong><small>PANTAI SENOK · KELANTAN</small></div></a>
     <nav class="navlinks" id="navlinks">
+      <a href="#anthem-mi">ANTHEM MI</a>
+      <a href="#breeding">Breeding</a>
       <a href="#tentang">Tentang Kami</a>
       <a href="#pakej">Pakej Berkuda</a>
       <a href="#endurance">Endurance</a>
@@ -362,24 +426,72 @@ img,video{max-width:100%;display:block}
 
 <main>
 <section class="hero" id="utama">
-  <img class="hero-bg" src="assets/horse-stable.jpg" alt="" fetchpriority="high">
+  <img class="hero-bg hero-anthem" src="assets/anthem-02.jpg" alt="ANTHEM MI, kuda jantan Arabian juara milik Naami Stable" fetchpriority="high">
   <div class="wrap hero-content">
+    <a class="champ-chip fade-in" href="#anthem-mi">🏆 Australian National Reserve Champion Stallion 2025</a>
     <div class="eyebrow fade-in">NAAMI STABLE · PANTAI SENOK</div>
-    <h1><span class="line"><span>Setiap tunggangan,</span></span><span class="line"><span><em>sebuah kenangan.</em></span></span></h1>
-    <p class="lead fade-in d1">Rasai pengalaman berkuda yang menyeronokkan di Pantai Senok, Kelantan. Daripada tunggangan pertama hingga pengembaraan di pesisir pantai.</p>
+    <h1><span class="line"><span>Rumah sang juara,</span></span><span class="line"><span><em class="gold">ANTHEM MI.</em></span></span></h1>
+    <p class="lead fade-in d1">Stallion Arabian tulen juara Australian National dan tersenarai dalam Champions Hall of Fame Mulawa Arabian Stud, Australia. Datang kenali sang juara dan rasai pengalaman berkuda di Pantai Senok, Kelantan.</p>
     <div class="actions fade-in d2">
+      <a class="btn btn-gold" href="#anthem-mi">KENALI ANTHEM MI <span class="arrow">↗</span></a>
       <a class="btn btn-blue" href="#pakej">TEROKAI PAKEJ <span class="arrow">↗</span></a>
       <a class="btn btn-ghost" href="https://wa.me/60132993525?text=Salam%20Naami%20Stable%2C%20saya%20ingin%20membuat%20tempahan." target="_blank" rel="noopener">TEMPAH MELALUI WHATSAPP</a>
     </div>
-    <div class="hero-bottom fade-in d3"><span>Pengalaman untuk seisi keluarga</span><span>Kelas menunggang kuda</span><span>Pengembaraan Pantai Senok</span></div>
+    <div class="hero-bottom fade-in d3"><span>Elite champion bloodline</span><span><a href="#breeding">Pakej breeding RM4,000 / mare</a></span><span>5 pakej berkuda</span></div>
   </div>
-  <a href="#tentang" class="scroll-cue" aria-label="Skrol ke bawah"></a>
+  <a href="#anthem-mi" class="scroll-cue" aria-label="Skrol ke bawah"></a>
 </section>
 
 <div class="marquee" aria-hidden="true"><div class="marquee-track">
   <span>Passion. Care. Excellence.</span><span>Fun · Safe · Memorable</span><span>Intro Ride dari RM10</span><span>Beach Outride Pantai Senok</span><span>Sewa Kuda Endurance</span><span>Ride Confidence, Build Character</span>
   <span>Passion. Care. Excellence.</span><span>Fun · Safe · Memorable</span><span>Intro Ride dari RM10</span><span>Beach Outride Pantai Senok</span><span>Sewa Kuda Endurance</span><span>Ride Confidence, Build Character</span>
 </div></div>
+
+<section class="section anthem" id="anthem-mi">
+  <div class="wrap anthem-grid">
+    <div class="mosaic anthem-mosaic reveal" aria-label="Gambar ANTHEM MI"><button class="tile t1" data-lightbox="assets/anthem-01.jpg" aria-label="Lihat gambar ANTHEM MI dalam saiz penuh"><img class="on" src="assets/anthem-01-sm.jpg" data-full="assets/anthem-01.jpg" alt="ANTHEM MI berlari di padang" loading="lazy"><img data-src="assets/anthem-04-sm.jpg" data-full="assets/anthem-04.jpg" alt="ANTHEM MI ditunggang di tepi pantai" loading="lazy"></button><button class="tile t2" data-lightbox="assets/anthem-02.jpg" aria-label="Lihat gambar ANTHEM MI dalam saiz penuh"><img class="on" src="assets/anthem-02-sm.jpg" data-full="assets/anthem-02.jpg" alt="ANTHEM MI berlari di antara pokok" loading="lazy"><img data-src="assets/anthem-05-sm.jpg" data-full="assets/anthem-05.jpg" alt="ANTHEM MI ditunggang di pantai ketika senja" loading="lazy"></button><button class="tile t3" data-lightbox="assets/anthem-03.jpg" aria-label="Lihat gambar ANTHEM MI dalam saiz penuh"><img class="on" src="assets/anthem-03-sm.jpg" data-full="assets/anthem-03.jpg" alt="ANTHEM MI berdiri dalam pose pertandingan" loading="lazy"><img data-src="assets/anthem-06-sm.jpg" data-full="assets/anthem-06.jpg" alt="ANTHEM MI dipimpin di kawasan stable" loading="lazy"></button><span class="anthem-chip" aria-hidden="true">🏆 Champion</span><span class="m-count" aria-hidden="true">6 foto</span></div>
+    <div>
+      <div class="kicker reveal" style="color:#e6c36a">BAKA JUARA</div>
+      <h2 class="heading reveal" style="--d:.08s">ANTHEM MI <em>di Hall of Fame Mulawa.</em></h2>
+      <p class="sub reveal" style="--d:.14s">Stallion Arabian tulen bertaraf <b>Australian National Champion</b> dan tersenarai dalam <b>Champions / Hall of Fame</b> Mulawa Arabian Stud, Sydney, Australia — kini di Naami Stable, Kelantan. <b>Elite champion bloodline.</b></p>
+      <dl class="anthem-facts reveal" style="--d:.2s"><div><dt>Pendaftaran</dt><dd>ANTHEM MI (AU) MYS62</dd></div><div><dt>Keturunan</dt><dd>Allegiance MI × Valentine MI (by DA Valentino)</dd></div><div><dt>Strain</dt><dd>A Seglawi Jedrani of Ibn Sudan</dd></div><div><dt>Tarikh lahir</dt><dd>29 Oktober 2020</dd></div><div><dt>Warna</dt><dd>Grey (born chestnut)</dd></div><div><dt>Pemilik</dt><dd>Wan Muhd Izzat Bin Wan Hussin, Malaysia</dd></div><div><dt>Root sire line</dt><dd>Saklawi I or. Ar. (1886), Ruala – Anazeh Bedouin</dd></div><div><dt>Stud</dt><dd>Mulawa Arabian Stud, Sydney, Australia</dd></div></dl>
+      <div class="actions reveal" style="--d:.26s">
+        <a class="btn btn-gold" href="https://www.mulawaarabians.com.au/mare-families/anthem-mi" target="_blank" rel="noopener">LIHAT PROFIL ANTHEM MI <span class="arrow">↗</span></a>
+        <a class="btn btn-ghost" href="https://www.mulawaarabians.com.au/champions-hall-of-fame" target="_blank" rel="noopener">CHAMPIONS HALL OF FAME <span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap anthem-more">
+    <div class="titles reveal">
+      <h3>Rekod juara</h3>
+      <ul>
+        <li><span>🏆</span><div><small>Australian National</small>Reserve Champion Stallion 2025</div></li>
+        <li><span>🏆</span><div><small>Australian National</small>Champion Junior Colt 2023</div></li>
+        <li><span>🏆</span><div><small>Australian National</small>Champion Yearling Colt 2022</div></li>
+        <li><span>🧬</span><div><small>Fifth generation</small>Mulawa-bred champion</div></li>
+        <li><span>👑</span><div><small>Member of the</small>Valentine MI family</div></li>
+      </ul>
+    </div>
+    <div class="breeding reveal" id="breeding" style="--d:.1s">
+      <span class="br-label">PREMIUM CHAMPION ARABIAN STALLION SERVICE</span>
+      <h3>Pakej Breeding ANTHEM MI</h3>
+      <div class="br-price">RM4,000 <small>/ mare</small></div>
+      <div class="br-free"><b>PERCUMA</b> ambil &amp; hantar mare*<small>*Tertakluk kepada lokasi &amp; terma syarat</small></div>
+      <p class="br-inc-h">Pakej termasuk</p>
+      <ul class="br-inc"><li>🐎 Live cover breeding</li><li>📜 Breeding certificate</li><li>🧾 Pedigree stallion information</li><li>📷 Gambar &amp; video breeding</li><li>🤝 Stallion &amp; mare handling</li></ul>
+      <p class="br-loc">📍 Lokasi breeding: Naami Stable, Pantai Senok, Kelantan</p>
+      <div class="br-actions">
+        <a class="btn btn-gold" href="https://wa.me/60199438799?text=Salam%20Naami%20Stable%2C%20saya%20berminat%20dengan%20pakej%20breeding%20ANTHEM%20MI%20(RM4%2C000%20%2F%20mare)." target="_blank" rel="noopener">WHATSAPP 019-943 8799 <span class="arrow">↗</span></a>
+        <a class="btn btn-ghost" href="https://wa.me/60199884542?text=Salam%20Naami%20Stable%2C%20saya%20berminat%20dengan%20pakej%20breeding%20ANTHEM%20MI%20(RM4%2C000%20%2F%20mare)." target="_blank" rel="noopener">019-988 4542 <span class="arrow">↗</span></a>
+      </div>
+      <button class="poster-link br-poster" data-lightbox="assets/poster-breeding-anthem.jpg"><img src="assets/poster-breeding-anthem.jpg" alt="Poster pakej breeding ANTHEM MI Naami Stable">Lihat poster breeding ⤢</button>
+    </div>
+    <div class="reg reveal">
+      <h3>Rekod pendaftaran penuh</h3>
+      <dl><div><dt>Nama</dt><dd>ANTHEM MI (AU) MYS62</dd></div><div><dt>Breed / Index</dt><dd>Arabian (Malaysia)</dd></div><div><dt>Purity</dt><dd>100.00%</dd></div><div><dt>Strain</dt><dd>A Seglawi Jedrani Of Ibn Sudan</dd></div><div><dt>Sex</dt><dd>Male</dd></div><div><dt>DOB</dt><dd>29 Oct 2020</dd></div><div><dt>Colour</dt><dd>Grey (born Chestnut)</dd></div><div><dt>Deceased</dt><dd>No</dd></div><div><dt>Geld date</dt><dd>N/A</dd></div><div><dt>Markings</dt><dd>Nil</dd></div><div><dt>Brands</dt><dd>Nil</dd></div><div><dt>DNA</dt><dd>D1044652 — parentage verified to both sire and dam</dd></div><div><dt>Blood type</dt><dd>No data recorded</dd></div><div><dt>Microchip</dt><dd>991001003835504</dd></div><div><dt>Vet report</dt><dd>Yes</dd></div><div class="wide"><dt>Genetic results</dt><dd>SCID – Results withheld, LFS – Results withheld, CA – Results withheld, OAAM – No data recorded</dd></div><div><dt>Breeder</dt><dd>Greg, Julie &amp; Jane Farrell (71519)</dd></div><div><dt>UELN</dt><dd>036004000306185</dd></div><div><dt>Owner</dt><dd>Wan Muhd Izzat Bin Wan Hussin (87982)</dd></div><div><dt>Leasee</dt><dd>No data recorded</dd></div><div><dt>Original registration number</dt><dd>S29132</dd></div><div><dt>Original registry</dt><dd>Arabian Horse Society of Australia</dd></div><div><dt>Status</dt><dd>Active</dd></div></dl>
+    </div>
+  </div>
+</section>
 
 <section class="section section-light" id="tentang">
   <div class="wrap intro-grid">
