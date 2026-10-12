@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#070d16">
-<meta name="description" content="Naami Stable, Pantai Senok, Bachok, Kelantan. Intro Ride, kelas berkuda dan Beach Outride. Dengar voice note kami dan tempah melalui WhatsApp.">
+<meta name="description" content="Naami Stable, Pantai Senok, Bachok, Kelantan. Intro Ride, kelas berkuda, Beach Outride dan sewa kuda endurance. Tempah melalui WhatsApp.">
 <meta property="og:title" content="Naami Stable | Pengalaman Berkuda di Pantai Senok">
-<meta property="og:description" content="Intro Ride RM10, Kelas Berkuda dan Beach Outride di Pantai Senok, Kelantan.">
+<meta property="og:description" content="Intro Ride RM10, Kelas Berkuda, Beach Outride dan sewa kuda endurance di Pantai Senok, Kelantan.">
 <meta property="og:image" content="assets/horse-stable.jpg">
 <title>Naami Stable | Pengalaman Berkuda di Pantai Senok</title>
 <link rel="icon" href="assets/logo.jpg">
@@ -148,21 +148,26 @@ img,video{max-width:100%;display:block}
 
 /* packages */
 .pkg-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px;perspective:1200px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:46px;perspective:1400px}
 .package{background:#fff;border:1px solid #e3e6e9;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 30px #10233810;transform-style:preserve-3d;transition:transform .5s var(--ease),box-shadow .5s;will-change:transform}
 .package:hover{box-shadow:0 30px 60px #10233826}
-.pic-btn{display:block;padding:0;border:0;background:#0b1422;position:relative;overflow:hidden;aspect-ratio:4/5;width:100%}
+.pic-btn{display:block;padding:0;border:0;background:#0b1422;position:relative;overflow:hidden;aspect-ratio:4/3;width:100%}
+.poster-btn .poster-bg{position:absolute;inset:0;filter:blur(22px) brightness(.55);transform:scale(1.2)}
+.poster-btn .poster-fg{position:relative;object-fit:contain;object-position:center}
+.package:hover .poster-btn img.poster-fg{transform:scale(1.03)}
+.mosaic{position:relative;display:grid;grid-template-columns:1.45fr 1fr;grid-template-rows:1fr 1fr;gap:4px;aspect-ratio:4/3;background:#0b1422}
+.tile{position:relative;overflow:hidden;border:0;padding:0;background:#13243a;cursor:zoom-in}
+.tile.t1{grid-row:span 2}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity .9s ease,transform 6s ease}
+.tile img.on{opacity:1;transform:scale(1)}
+.tile:hover img.on{transform:scale(1.05);transition:opacity .9s ease,transform 1s var(--ease)}
+.m-count{position:absolute;left:12px;bottom:12px;background:#070d16bf;color:#fff;font-size:11px;font-weight:700;padding:6px 10px;border-radius:30px;pointer-events:none;backdrop-filter:blur(6px)}
+.poster-link{align-self:flex-start;border:0;background:none;padding:2px 0;margin:2px 0 0;color:#117fce;font-size:12.5px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.poster-link img{display:none}
+.price-ask{font-size:30px}
+.price-ask small{display:block;margin-top:2px}
 .pic-btn img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.2s var(--ease)}
 .package:hover .pic-btn img{transform:scale(1.06)}
-.slides img.slide{position:absolute;inset:0;opacity:0;object-position:center 35%;transform:scale(1.02);transition:opacity 1.2s ease,transform 7s linear}
-.slides img.slide.on{opacity:1;transform:scale(1.1)}
-.slides img.slide-poster{object-position:top}
-.slides:after{content:"Lihat gambar ⤢"}
-.slide-dots{position:absolute;left:14px;bottom:16px;z-index:2;display:flex;gap:5px}
-.slide-dots{flex-wrap:wrap;gap:4px;max-width:calc(100% - 130px)}
-.slide-dots i{width:5px;height:5px}
-.slide-dots i{width:6px;height:6px;border-radius:6px;background:#ffffff80;transition:width .4s var(--ease),background .4s}
-.slide-dots i.on{width:18px;background:#fff}
 .pic-btn:after{content:"Lihat poster ⤢";z-index:2;position:absolute;right:12px;bottom:12px;background:#070d16cc;color:#fff;font-size:11px;font-weight:700;padding:7px 11px;border-radius:30px;opacity:0;transform:translateY(8px);transition:.4s var(--ease)}
 .package:hover .pic-btn:after,.pic-btn:focus-visible:after{opacity:1;transform:none}
 .package-body{padding:26px;display:flex;flex-direction:column;flex:1}
@@ -175,27 +180,6 @@ img,video{max-width:100%;display:block}
 .package .btn{width:100%;margin-top:14px}
 .feature{border-color:#78bdeb;box-shadow:0 20px 50px #2b8fe029}
 .labeltop{position:absolute;left:14px;top:14px;z-index:2;background:var(--blue);color:#fff;font-size:10px;font-weight:700;letter-spacing:.15em;padding:7px 11px;border-radius:30px}
-
-/* endurance */
-.endurance{background:radial-gradient(900px 500px at 10% 0%,#163a5c 0%,transparent 60%),radial-gradient(700px 400px at 100% 100%,#10304d 0%,transparent 60%),#08111d;overflow:hidden}
-.endu-head{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:end}
-.endu-card{border:1px solid #ffffff24;border-radius:18px;padding:28px;background:linear-gradient(150deg,#ffffff12,#ffffff05);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.endu-label{font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--sky)}
-.endu-price{margin:12px 0 2px;color:var(--muted);font-size:13px}
-.endu-price b{display:block;font-family:'Playfair Display',serif;font-size:38px;color:#fff;font-weight:600;line-height:1.15}
-.endu-card p{color:var(--muted);margin:0 0 20px;font-size:13.5px}
-.endu-card .btn{width:100%}
-.endu-call{display:block;text-align:center;margin-top:12px;font-size:13px;color:var(--muted)}
-.endu-call:hover{color:var(--sky)}
-.endu-rows{margin-top:56px;display:grid;gap:14px}
-.endu-row{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-.endu-track{display:flex;width:max-content;animation:endu 70s linear infinite}
-.endu-row.rev .endu-track{animation-direction:reverse;animation-duration:60s}
-.endu-row:hover .endu-track,.endu-row:focus-within .endu-track{animation-play-state:paused}
-@keyframes endu{to{transform:translateX(-33.3333%)}}
-.endu-item{flex:none;height:300px;margin-right:14px;padding:0;border:0;border-radius:14px;overflow:hidden;background:#13243a;cursor:zoom-in}
-.endu-item img{height:100%;width:auto;display:block;transition:transform 1s var(--ease),filter .5s}
-.endu-item:hover img{transform:scale(1.06);filter:saturate(1.15)}
 
 /* experience */
 .experience{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
@@ -307,9 +291,6 @@ img,video{max-width:100%;display:block}
   .cards{grid-template-columns:1fr 1fr}
   .gallery{grid-template-columns:1fr 1fr;grid-template-rows:280px 200px 200px}
   .exp-media{height:380px}
-  .endu-head{grid-template-columns:1fr;gap:30px}
-  .endu-item{height:220px}
-  .endu-rows{margin-top:40px}
   .reels{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;margin:40px -28px 0;padding:10px 28px 24px;scrollbar-width:none}
   .reels::-webkit-scrollbar{display:none}
   .reel{flex:0 0 min(72%,280px);scroll-snap-align:center}
@@ -335,16 +316,12 @@ img,video{max-width:100%;display:block}
   .sound-btn{left:14px;bottom:14px}
   .section{padding:64px 0}
   .marquee-track{font-size:18px}
-  .endu-item{height:190px;margin-right:10px}
-  .endu-rows{gap:10px}
-  .endu-price b{font-size:32px}
   .reels{margin:34px -16px 0;padding:10px 16px 24px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   .reveal,.fade-in{opacity:1;transform:none}
   .line>span{transform:none}
-  .endu-row{overflow-x:auto}
 }
 </style>
 </head>
@@ -408,7 +385,7 @@ img,video{max-width:100%;display:block}
       <p class="reveal" style="--d:.22s">Sama ada pertama kali mencuba atau ingin meningkatkan kemahiran berkuda, kami menyediakan pilihan pengalaman mengikut minat anda.</p>
       <div class="stat-row reveal" style="--d:.3s">
         <div><strong>RM<span data-count="10">10</span></strong><small>Harga bermula</small></div>
-        <div><strong><span data-count="3">3</span> pilihan</strong><small>Pengalaman utama</small></div>
+        <div><strong><span data-count="4">4</span> pakej</strong><small>Pengalaman berkuda</small></div>
         <div><strong><span data-count="12">12</span> km</strong><small>Beach Outride</small></div>
       </div>
     </div>
@@ -426,26 +403,28 @@ img,video{max-width:100%;display:block}
     </div>
     <div class="cards">
       <article class="package reveal tilt">
-        <button class="pic-btn slides" data-lightbox="assets/intro-ride-01.jpg" aria-label="Lihat gambar Intro Ride"><img class="slide on" loading="lazy" src="assets/intro-ride-01-sm.jpg" data-full="assets/intro-ride-01.jpg" alt="Kanak-kanak menunggang kuda dipimpin kru Naami Stable"><img class="slide" data-src="assets/intro-ride-02-sm.jpg" data-full="assets/intro-ride-02.jpg" alt="Pengunjung menunggang kuda di paddock dipimpin kru"><img class="slide" data-src="assets/intro-ride-03-sm.jpg" data-full="assets/intro-ride-03.jpg" alt="Pengunjung menunggang kuda dipimpin kru Naami Stable"><img class="slide" data-src="assets/intro-ride-04-sm.jpg" data-full="assets/intro-ride-04.jpg" alt="Kanak-kanak kecil menunggang kuda poni dengan bantuan kru"><img class="slide" data-src="assets/intro-ride-05-sm.jpg" data-full="assets/intro-ride-05.jpg" alt="Pengunjung bergambar di atas kuda di Naami Stable"><img class="slide" data-src="assets/intro-ride-06-sm.jpg" data-full="assets/intro-ride-06.jpg" alt="Pengunjung menunggang kuda dipimpin dua kru"><img class="slide" data-src="assets/intro-ride-07-sm.jpg" data-full="assets/intro-ride-07.jpg" alt="Kru membetulkan sanggur kuda untuk pengunjung"><img class="slide" data-src="assets/intro-ride-08-sm.jpg" data-full="assets/intro-ride-08.jpg" alt="Pengunjung menunggang kuda mengelilingi paddock"><img class="slide slide-poster" data-src="assets/poster-intro-ride.jpg" data-full="assets/poster-intro-ride.jpg" alt="Poster Intro Ride Naami Stable"><span class="slide-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
+        <div class="mosaic" aria-label="Gambar Intro Ride"><button class="tile t1" data-lightbox="assets/intro-ride-01.jpg" aria-label="Lihat gambar Intro Ride dalam saiz penuh"><img class="on" src="assets/intro-ride-01-sm.jpg" data-full="assets/intro-ride-01.jpg" alt="Kanak-kanak menunggang kuda dipimpin kru Naami Stable" loading="lazy"><img data-src="assets/intro-ride-04-sm.jpg" data-full="assets/intro-ride-04.jpg" alt="Kanak-kanak kecil menunggang kuda poni dengan bantuan kru" loading="lazy"><img data-src="assets/intro-ride-07-sm.jpg" data-full="assets/intro-ride-07.jpg" alt="Kru membetulkan sanggur kuda untuk pengunjung" loading="lazy"></button><button class="tile t2" data-lightbox="assets/intro-ride-02.jpg" aria-label="Lihat gambar Intro Ride dalam saiz penuh"><img class="on" src="assets/intro-ride-02-sm.jpg" data-full="assets/intro-ride-02.jpg" alt="Pengunjung menunggang kuda di paddock dipimpin kru" loading="lazy"><img data-src="assets/intro-ride-05-sm.jpg" data-full="assets/intro-ride-05.jpg" alt="Pengunjung bergambar di atas kuda di Naami Stable" loading="lazy"><img data-src="assets/intro-ride-08-sm.jpg" data-full="assets/intro-ride-08.jpg" alt="Pengunjung menunggang kuda mengelilingi paddock" loading="lazy"></button><button class="tile t3" data-lightbox="assets/intro-ride-03.jpg" aria-label="Lihat gambar Intro Ride dalam saiz penuh"><img class="on" src="assets/intro-ride-03-sm.jpg" data-full="assets/intro-ride-03.jpg" alt="Pengunjung menunggang kuda dipimpin kru Naami Stable" loading="lazy"><img data-src="assets/intro-ride-06-sm.jpg" data-full="assets/intro-ride-06.jpg" alt="Pengunjung menunggang kuda dipimpin dua kru" loading="lazy"></button><span class="m-count" aria-hidden="true">8 foto</span></div>
         <div class="package-body">
           <h3>Intro Ride</h3>
           <p class="grow">Pengalaman pertama menunggang kuda. Sesuai untuk kanak-kanak dan pengunjung yang ingin mencuba. Maksimum 5–6 orang setiap sesi.</p>
           <div class="price">RM10 <small>/ 1 pusingan paddock</small></div>
+          <button class="poster-link" data-lightbox="assets/poster-intro-ride.jpg"><img src="assets/poster-intro-ride.jpg" alt="Poster Intro Ride Naami Stable" hidden>Lihat poster ⤢</button>
           <a class="btn btn-blue" href="https://wa.me/60132993525?text=Salam%2C%20saya%20ingin%20tempah%20Intro%20Ride%20RM10." target="_blank" rel="noopener">TEMPAH PAKEJ <span class="arrow">↗</span></a>
         </div>
       </article>
       <article class="package feature reveal tilt" style="--d:.1s">
         <span class="labeltop">PALING POPULAR</span>
-        <button class="pic-btn slides" data-lightbox="assets/beach-ride-01.jpg" aria-label="Lihat gambar Beach Outride"><img class="slide on" loading="lazy" src="assets/beach-ride-01-sm.jpg" data-full="assets/beach-ride-01.jpg" alt="Empat penunggang bersama kuda di tepi Pantai Senok"><img class="slide" data-src="assets/beach-ride-02-sm.jpg" data-full="assets/beach-ride-02.jpg" alt="Dua penunggang menunggang kuda di gigi air pantai"><img class="slide" data-src="assets/beach-ride-03-sm.jpg" data-full="assets/beach-ride-03.jpg" alt="Penunggang dewasa dan kanak-kanak menunggang kuda di tepi pantai"><img class="slide" data-src="assets/beach-ride-04-sm.jpg" data-full="assets/beach-ride-04.jpg" alt="Tiga penunggang dan kuda di pesisir pantai"><img class="slide" data-src="assets/beach-ride-05-sm.jpg" data-full="assets/beach-ride-05.jpg" alt="Penunggang kuda coklat dan kuda putih di tepi pantai"><img class="slide" data-src="assets/beach-ride-06-sm.jpg" data-full="assets/beach-ride-06.jpg" alt="Penunggang kuda coklat di pasir pantai"><img class="slide" data-src="assets/beach-ride-07-sm.jpg" data-full="assets/beach-ride-07.jpg" alt="Penunggang kuda kelabu di pantai ketika senja"><img class="slide" data-src="assets/beach-ride-08-sm.jpg" data-full="assets/beach-ride-08.jpg" alt="Kanak-kanak tersenyum di atas kuda di pantai"><img class="slide" data-src="assets/beach-ride-09-sm.jpg" data-full="assets/beach-ride-09.jpg" alt="Remaja menunggang kuda kelabu di pantai"><img class="slide" data-src="assets/beach-ride-10-sm.jpg" data-full="assets/beach-ride-10.jpg" alt="Kanak-kanak menunggang kuda dipimpin kru di tepi pantai"><img class="slide" data-src="assets/beach-ride-11-sm.jpg" data-full="assets/beach-ride-11.jpg" alt="Kru Naami Stable bersama penunggang muda di pantai"><img class="slide" data-src="assets/beach-ride-12-sm.jpg" data-full="assets/beach-ride-12.jpg" alt="Kanak-kanak mengusap kuda ketika Beach Outride"><img class="slide" data-src="assets/beach-ride-13-sm.jpg" data-full="assets/beach-ride-13.jpg" alt="Pengunjung melihat kuda dan penunggang di pantai"><img class="slide" data-src="assets/beach-ride-14-sm.jpg" data-full="assets/beach-ride-14.jpg" alt="Penunggang muda menunggang kuda di laluan pantai"><img class="slide" data-src="assets/beach-ride-15-sm.jpg" data-full="assets/beach-ride-15.jpg" alt="Penunggang di atas kuda poni di kawasan pokok rhu"><img class="slide" data-src="assets/beach-ride-16-sm.jpg" data-full="assets/beach-ride-16.jpg" alt="Penunggang memeluk kuda poni di bawah pokok rhu"><img class="slide" data-src="assets/beach-ride-17-sm.jpg" data-full="assets/beach-ride-17.jpg" alt="Penunggang menunggang kuda di antara pokok rhu"><img class="slide" data-src="assets/beach-ride-18-sm.jpg" data-full="assets/beach-ride-18.jpg" alt="Penunggang menunggang kuda di hutan rhu tepi pantai"><img class="slide" data-src="assets/beach-ride-19-sm.jpg" data-full="assets/beach-ride-19.jpg" alt="Pengunjung tersenyum bersama kuda di hutan rhu"><img class="slide slide-poster" data-src="assets/poster-beach-outride.jpg" data-full="assets/poster-beach-outride.jpg" alt="Poster Beach Outride Naami Stable"><span class="slide-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
+        <div class="mosaic" aria-label="Gambar Beach Outride"><button class="tile t1" data-lightbox="assets/beach-ride-01.jpg" aria-label="Lihat gambar Beach Outride dalam saiz penuh"><img class="on" src="assets/beach-ride-01-sm.jpg" data-full="assets/beach-ride-01.jpg" alt="Empat penunggang bersama kuda di tepi Pantai Senok" loading="lazy"><img data-src="assets/beach-ride-04-sm.jpg" data-full="assets/beach-ride-04.jpg" alt="Tiga penunggang dan kuda di pesisir pantai" loading="lazy"><img data-src="assets/beach-ride-07-sm.jpg" data-full="assets/beach-ride-07.jpg" alt="Penunggang kuda kelabu di pantai ketika senja" loading="lazy"><img data-src="assets/beach-ride-10-sm.jpg" data-full="assets/beach-ride-10.jpg" alt="Kanak-kanak menunggang kuda dipimpin kru di tepi pantai" loading="lazy"><img data-src="assets/beach-ride-13-sm.jpg" data-full="assets/beach-ride-13.jpg" alt="Pengunjung melihat kuda dan penunggang di pantai" loading="lazy"><img data-src="assets/beach-ride-16-sm.jpg" data-full="assets/beach-ride-16.jpg" alt="Penunggang memeluk kuda poni di bawah pokok rhu" loading="lazy"><img data-src="assets/beach-ride-19-sm.jpg" data-full="assets/beach-ride-19.jpg" alt="Pengunjung tersenyum bersama kuda di hutan rhu" loading="lazy"></button><button class="tile t2" data-lightbox="assets/beach-ride-02.jpg" aria-label="Lihat gambar Beach Outride dalam saiz penuh"><img class="on" src="assets/beach-ride-02-sm.jpg" data-full="assets/beach-ride-02.jpg" alt="Dua penunggang menunggang kuda di gigi air pantai" loading="lazy"><img data-src="assets/beach-ride-05-sm.jpg" data-full="assets/beach-ride-05.jpg" alt="Penunggang kuda coklat dan kuda putih di tepi pantai" loading="lazy"><img data-src="assets/beach-ride-08-sm.jpg" data-full="assets/beach-ride-08.jpg" alt="Kanak-kanak tersenyum di atas kuda di pantai" loading="lazy"><img data-src="assets/beach-ride-11-sm.jpg" data-full="assets/beach-ride-11.jpg" alt="Kru Naami Stable bersama penunggang muda di pantai" loading="lazy"><img data-src="assets/beach-ride-14-sm.jpg" data-full="assets/beach-ride-14.jpg" alt="Penunggang muda menunggang kuda di laluan pantai" loading="lazy"><img data-src="assets/beach-ride-17-sm.jpg" data-full="assets/beach-ride-17.jpg" alt="Penunggang menunggang kuda di antara pokok rhu" loading="lazy"></button><button class="tile t3" data-lightbox="assets/beach-ride-03.jpg" aria-label="Lihat gambar Beach Outride dalam saiz penuh"><img class="on" src="assets/beach-ride-03-sm.jpg" data-full="assets/beach-ride-03.jpg" alt="Penunggang dewasa dan kanak-kanak menunggang kuda di tepi pantai" loading="lazy"><img data-src="assets/beach-ride-06-sm.jpg" data-full="assets/beach-ride-06.jpg" alt="Penunggang kuda coklat di pasir pantai" loading="lazy"><img data-src="assets/beach-ride-09-sm.jpg" data-full="assets/beach-ride-09.jpg" alt="Remaja menunggang kuda kelabu di pantai" loading="lazy"><img data-src="assets/beach-ride-12-sm.jpg" data-full="assets/beach-ride-12.jpg" alt="Kanak-kanak mengusap kuda ketika Beach Outride" loading="lazy"><img data-src="assets/beach-ride-15-sm.jpg" data-full="assets/beach-ride-15.jpg" alt="Penunggang di atas kuda poni di kawasan pokok rhu" loading="lazy"><img data-src="assets/beach-ride-18-sm.jpg" data-full="assets/beach-ride-18.jpg" alt="Penunggang menunggang kuda di hutan rhu tepi pantai" loading="lazy"></button><span class="m-count" aria-hidden="true">19 foto</span></div>
         <div class="package-body">
           <h3>Beach Outride</h3>
           <p class="grow">Menunggang di pesisir Pantai Senok ketika matahari terbit atau terbenam. Termasuk minuman ringan serta peluang merakam gambar dan video sendiri. Maksimum 2–3 penunggang.</p>
           <div class="price">RM150 <small>/ 2 jam atau 12 km</small></div>
+          <button class="poster-link" data-lightbox="assets/poster-beach-outride.jpg"><img src="assets/poster-beach-outride.jpg" alt="Poster Beach Outride Naami Stable" hidden>Lihat poster ⤢</button>
           <a class="btn btn-blue" href="https://wa.me/60132993525?text=Salam%2C%20saya%20ingin%20tempah%20Beach%20Outride%20RM150." target="_blank" rel="noopener">TEMPAH PAKEJ <span class="arrow">↗</span></a>
         </div>
       </article>
       <article class="package reveal tilt" style="--d:.2s">
-        <button class="pic-btn" data-lightbox="assets/poster-ride-confidence.jpg" aria-label="Lihat poster Kelas Berkuda"><img src="assets/poster-ride-confidence.jpg" alt="Poster kelas berkuda Ride Confidence" loading="lazy"></button>
+        <button class="pic-btn poster-btn" data-lightbox="assets/poster-ride-confidence.jpg" aria-label="Lihat poster Kelas Berkuda"><img class="poster-bg" src="assets/poster-ride-confidence.jpg" alt="" loading="lazy"><img class="poster-fg" src="assets/poster-ride-confidence.jpg" alt="Poster kelas berkuda Ride Confidence" loading="lazy"></button>
         <div class="package-body">
           <h3>Kelas Berkuda</h3>
           <p class="grow">Belajar asas tunggangan, pengendalian kuda, teknik berkuda dan keselamatan dengan bimbingan.</p>
@@ -454,28 +433,16 @@ img,video{max-width:100%;display:block}
           <a class="btn btn-blue" href="https://wa.me/60132993525?text=Salam%2C%20saya%20ingin%20bertanya%20tentang%20kelas%20berkuda." target="_blank" rel="noopener">TANYA JADUAL <span class="arrow">↗</span></a>
         </div>
       </article>
+      <article class="package reveal tilt" id="endurance" style="--d:.3s">
+        <div class="mosaic" aria-label="Gambar Sewa Kuda Endurance"><button class="tile t1" data-lightbox="assets/endurance-01.jpg" aria-label="Lihat gambar Sewa Kuda Endurance dalam saiz penuh"><img class="on" src="assets/endurance-01-sm.jpg" data-full="assets/endurance-01.jpg" alt="Penunggang endurance bersama kuda coklat di laluan hutan" loading="lazy"><img data-src="assets/endurance-04-sm.jpg" data-full="assets/endurance-04.jpg" alt="Penunggang di atas kuda kelabu di sebelah tong air ketika acara endurance" loading="lazy"><img data-src="assets/endurance-07-sm.jpg" data-full="assets/endurance-07.jpg" alt="Penunggang endurance dan kuda pada waktu malam" loading="lazy"><img data-src="assets/endurance-10-sm.jpg" data-full="assets/endurance-10.jpg" alt="Kuda diberi minum oleh kru semasa acara endurance" loading="lazy"></button><button class="tile t2" data-lightbox="assets/endurance-02.jpg" aria-label="Lihat gambar Sewa Kuda Endurance dalam saiz penuh"><img class="on" src="assets/endurance-02-sm.jpg" data-full="assets/endurance-02.jpg" alt="Penunggang dan kuda kelabu di tempat menyejukkan kuda ketika acara endurance" loading="lazy"><img data-src="assets/endurance-05-sm.jpg" data-full="assets/endurance-05.jpg" alt="Penunggang endurance menunggang kuda coklat gelap di laluan tanah" loading="lazy"><img data-src="assets/endurance-08-sm.jpg" data-full="assets/endurance-08.jpg" alt="Kru memberi kuda minum ketika acara endurance" loading="lazy"><img data-src="assets/endurance-11-sm.jpg" data-full="assets/endurance-11.jpg" alt="Penunggang endurance bersama kuda di laluan berlumpur" loading="lazy"></button><button class="tile t3" data-lightbox="assets/endurance-03.jpg" aria-label="Lihat gambar Sewa Kuda Endurance dalam saiz penuh"><img class="on" src="assets/endurance-03-sm.jpg" data-full="assets/endurance-03.jpg" alt="Penunggang muda bersama kuda di laluan acara endurance" loading="lazy"><img data-src="assets/endurance-06-sm.jpg" data-full="assets/endurance-06.jpg" alt="Kru menyejukkan kuda di tempat rehat acara endurance" loading="lazy"><img data-src="assets/endurance-09-sm.jpg" data-full="assets/endurance-09.jpg" alt="Penunggang endurance bersama kuda di laluan selepas hujan" loading="lazy"></button><span class="m-count" aria-hidden="true">11 foto</span></div>
+        <div class="package-body">
+          <h3>Sewa Kuda Endurance</h3>
+          <p class="grow">Ingin menyertai acara endurance? Naami Stable menyediakan kuda untuk disewa bagi acara endurance. Hubungi kami untuk maklumat kuda, jadual dan syarat penyewaan.</p>
+          <div class="price price-ask">Hubungi kami <small>/ untuk harga &amp; info lanjut</small></div>
+          <a class="btn btn-blue" href="https://wa.me/60132993525?text=Salam%20Naami%20Stable%2C%20saya%20ingin%20bertanya%20tentang%20sewa%20kuda%20untuk%20endurance." target="_blank" rel="noopener">TANYA HARGA <span class="arrow">↗</span></a>
+        </div>
+      </article>
     </div>
-  </div>
-</section>
-
-<section class="section endurance" id="endurance">
-  <div class="wrap endu-head">
-    <div>
-      <div class="kicker reveal" style="color:var(--sky)">PERKHIDMATAN NAAMI STABLE</div>
-      <h2 class="heading reveal" style="--d:.08s">Sewa kuda untuk <em>acara endurance.</em></h2>
-      <p class="sub reveal" style="--d:.14s">Ingin menyertai acara endurance? Naami Stable menyediakan kuda untuk disewa bagi acara endurance. Hubungi kami untuk maklumat kuda, jadual dan syarat penyewaan.</p>
-    </div>
-    <div class="endu-card reveal" style="--d:.2s">
-      <span class="endu-label">SEWA KUDA ENDURANCE</span>
-      <div class="endu-price">Harga<b>Hubungi kami</b></div>
-      <p>untuk info lanjut dan tempahan</p>
-      <a class="btn btn-wa" href="https://wa.me/60132993525?text=Salam%20Naami%20Stable%2C%20saya%20ingin%20bertanya%20tentang%20sewa%20kuda%20untuk%20endurance." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.1.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg> TANYA MELALUI WHATSAPP <span class="arrow">↗</span></a>
-      <a class="endu-call" href="tel:+60132993525">atau hubungi 013-299 3525</a>
-    </div>
-  </div>
-  <div class="endu-rows reveal" style="--d:.1s">
-    <div class="endu-row"><div class="endu-track"><button class="endu-item" data-lightbox="assets/endurance-01.jpg"><img src="assets/endurance-01-sm.jpg" alt="Penunggang endurance bersama kuda coklat di laluan hutan" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-02.jpg"><img src="assets/endurance-02-sm.jpg" alt="Penunggang dan kuda kelabu di tempat menyejukkan kuda ketika acara endurance" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-03.jpg"><img src="assets/endurance-03-sm.jpg" alt="Penunggang muda bersama kuda di laluan acara endurance" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-04.jpg"><img src="assets/endurance-04-sm.jpg" alt="Penunggang di atas kuda kelabu di sebelah tong air ketika acara endurance" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-05.jpg"><img src="assets/endurance-05-sm.jpg" alt="Penunggang endurance menunggang kuda coklat gelap di laluan tanah" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-06.jpg"><img src="assets/endurance-06-sm.jpg" alt="Kru menyejukkan kuda di tempat rehat acara endurance" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-01.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-01-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-02.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-02-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-03.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-03-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-04.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-04-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-05.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-05-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-06.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-06-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-01.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-01-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-02.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-02-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-03.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-03-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-04.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-04-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-05.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-05-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-06.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-06-sm.jpg" alt="" loading="lazy"></button></div></div>
-    <div class="endu-row rev"><div class="endu-track"><button class="endu-item" data-lightbox="assets/endurance-07.jpg"><img src="assets/endurance-07-sm.jpg" alt="Penunggang endurance dan kuda pada waktu malam" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-08.jpg"><img src="assets/endurance-08-sm.jpg" alt="Kru memberi kuda minum ketika acara endurance" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-09.jpg"><img src="assets/endurance-09-sm.jpg" alt="Penunggang endurance bersama kuda di laluan selepas hujan" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-10.jpg"><img src="assets/endurance-10-sm.jpg" alt="Kuda diberi minum oleh kru semasa acara endurance" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-11.jpg"><img src="assets/endurance-11-sm.jpg" alt="Penunggang endurance bersama kuda di laluan berlumpur" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-07.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-07-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-08.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-08-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-09.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-09-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-10.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-10-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-11.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-11-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-07.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-07-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-08.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-08-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-09.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-09-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-10.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-10-sm.jpg" alt="" loading="lazy"></button><button class="endu-item" data-lightbox="assets/endurance-11.jpg" aria-hidden="true" tabindex="-1"><img src="assets/endurance-11-sm.jpg" alt="" loading="lazy"></button></div></div>
   </div>
 </section>
 
@@ -659,23 +626,25 @@ img,video{max-width:100%;display:block}
     addEventListener('pointermove', e => glow.style.transform = `translate(${e.clientX}px,${e.clientY}px)`, { passive: true });
   }
 
-  /* ---------- Intro Ride photo slideshow (only runs while on screen) ---------- */
-  document.querySelectorAll('.slides').forEach(box => {
-    const slides = [...box.querySelectorAll('.slide')], dots = [...box.querySelectorAll('.slide-dots i')];
-    let idx = 0, timer = null, hover = false;
-    const load = img => { if (img.dataset.src && !img.src) img.src = img.dataset.src; };
-    const show = n => {
-      slides[idx].classList.remove('on'); dots[idx].classList.remove('on');
-      idx = (n + slides.length) % slides.length;
-      load(slides[idx]); load(slides[(idx + 1) % slides.length]); // fetch the next one ahead of time
-      slides[idx].classList.add('on'); dots[idx].classList.add('on');
-      box.dataset.lightbox = slides[idx].dataset.full; // the lightbox opens the photo being shown
+  /* ---------- Package photo mosaics: 3 photos on show, one tile changes at a time ---------- */
+  document.querySelectorAll('.mosaic').forEach(m => {
+    const tiles = [...m.querySelectorAll('.tile')].map(el => ({ el, imgs: [...el.querySelectorAll('img')], i: 0 }));
+    const load = img => { if (img.dataset.src && !img.getAttribute('src')) img.src = img.dataset.src; };
+    const ahead = t => load(t.imgs[(t.i + 1) % t.imgs.length]); // fetch each tile's next photo early
+    let turn = 0, timer = null, hover = false;
+    const step = () => {
+      const t = tiles[turn++ % tiles.length];
+      if (t.imgs.length < 2) return;
+      t.imgs[t.i].classList.remove('on');
+      t.i = (t.i + 1) % t.imgs.length;
+      load(t.imgs[t.i]); t.imgs[t.i].classList.add('on'); ahead(t);
+      t.el.dataset.lightbox = t.imgs[t.i].dataset.full; // the lightbox opens the photo being shown
     };
-    const start = () => { load(slides[1]); if (!timer && !reduce) timer = setInterval(() => { if (!hover) show(idx + 1); }, 3500); };
+    const start = () => { tiles.forEach(ahead); if (!timer && !reduce) timer = setInterval(() => { if (!hover) step(); }, 1800); };
     const stop = () => { clearInterval(timer); timer = null; };
-    box.addEventListener('pointerenter', () => hover = true);
-    box.addEventListener('pointerleave', () => hover = false);
-    new IntersectionObserver(([e]) => e.isIntersecting ? start() : stop(), { threshold: .3 }).observe(box);
+    m.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') hover = true; });
+    m.addEventListener('pointerleave', () => hover = false);
+    new IntersectionObserver(([e]) => e.isIntersecting ? start() : stop(), { threshold: .3 }).observe(m);
   });
 
   /* ---------- Lightbox ---------- */
