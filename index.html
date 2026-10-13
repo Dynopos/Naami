@@ -185,6 +185,21 @@ img,video{max-width:100%;display:block}
 
 /* anthem mi */
 .anthem{background:radial-gradient(700px 400px at 15% 30%,#3a2f12 0%,transparent 60%),linear-gradient(180deg,#0b1422,#070d16);border-bottom:1px solid #ffffff12}
+.konsultan .k-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.konsultan .mosaic{border-radius:16px;overflow:hidden;aspect-ratio:4/4.3;box-shadow:0 30px 70px #0d182833}
+.k-chip{background:var(--blue);color:#fff}
+.k-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:21px;color:#117fce;margin:-4px 0 14px}
+.k-services{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.k-services li{background:#fff;border:1px solid #15223314;border-radius:16px;padding:22px 20px;box-shadow:0 12px 30px #0d18280d;transition:transform .35s var(--ease),box-shadow .35s}
+.k-services li:hover{transform:translateY(-4px);box-shadow:0 18px 40px #0d18281a}
+.k-services span{font-size:26px;display:block;margin-bottom:10px}
+.k-services b{display:block;font-size:14.5px;margin-bottom:6px;color:#152233}
+.k-services p{margin:0;color:#66788a;font-size:13px;line-height:1.65}
+.k-commit{margin-top:28px;border-radius:18px;padding:34px;background:var(--navy);color:#fff;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center}
+.k-commit h3{font-family:'Playfair Display',serif;font-weight:600;font-size:24px;margin:6px 0 10px}
+.k-commit p{margin:0;color:#c9d5e1;line-height:1.75;font-size:14.5px}
+.k-commit blockquote{margin:0;font-family:'Playfair Display',serif;font-style:italic;font-size:20px;line-height:1.5;color:#fff;border-left:2px solid var(--sky);padding-left:18px}
+.k-commit blockquote small{display:block;margin-top:10px;font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);font-weight:700}
 .kuda-head{text-align:center;margin-bottom:56px}
 .kuda-head .sub{margin:0 auto}
 .kuda-jump{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
@@ -342,7 +357,7 @@ img,video{max-width:100%;display:block}
 @media(max-width:900px){
   .nav{height:72px}.scrolled .nav{height:64px}
   .brand strong{font-size:16px}
-  .navlinks{position:fixed;top:0;left:0;right:0;height:100vh;height:100dvh;background:#070d16f7;flex-direction:column;justify-content:center;gap:26px;font-size:26px;font-family:'Playfair Display',serif;clip-path:circle(0 at calc(100% - 44px) 36px);transition:clip-path .7s var(--ease);z-index:-1}
+  .navlinks{position:fixed;top:0;left:0;right:0;height:100vh;height:100dvh;background:#070d16f7;flex-direction:column;justify-content:safe center;gap:clamp(6px,2vh,26px);font-size:clamp(19px,3vh,26px);padding:72px 0 24px;overflow-y:auto;font-family:'Playfair Display',serif;clip-path:circle(0 at calc(100% - 44px) 36px);transition:clip-path .7s var(--ease);z-index:-1}
   .navlinks.open{clip-path:circle(150% at calc(100% - 44px) 36px)}
   .mobile-menu{display:block}
   .nav>.pill{display:none}
@@ -356,6 +371,9 @@ img,video{max-width:100%;display:block}
   .anthem-more{grid-template-columns:1fr}
   .reg dl{grid-template-columns:1fr 1fr}
   .anthem-grid{grid-template-columns:1fr;gap:30px}
+  .konsultan .k-grid{grid-template-columns:1fr;gap:30px}
+  .k-services{grid-template-columns:1fr 1fr}
+  .k-commit{grid-template-columns:1fr;padding:26px}
       .reels{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;margin:40px -28px 0;padding:10px 28px 24px;scrollbar-width:none}
   .reels::-webkit-scrollbar{display:none}
   .reel{flex:0 0 min(72%,280px);scroll-snap-align:center}
@@ -385,6 +403,7 @@ img,video{max-width:100%;display:block}
   .section{padding:64px 0}
   .marquee-track{font-size:18px}
   .anthem-facts{grid-template-columns:1fr}
+  .k-services{grid-template-columns:1fr}
   .br-inc{grid-template-columns:1fr}
   .reg dl{grid-template-columns:1fr 1fr;column-gap:16px}
   .reg dl div.wide{grid-column:1/-1}
@@ -413,6 +432,7 @@ img,video{max-width:100%;display:block}
       <a href="#tentang">Tentang Kami</a>
       <a href="#pakej">Pakej Berkuda</a>
       <a href="#kuda">Kuda Kami</a>
+      <a href="#konsultan">Konsultan</a>
       <a href="#endurance">Endurance</a>
       <a href="#float">Float Kuda</a>
       <a href="#video">Video</a>
@@ -601,6 +621,10 @@ img,video{max-width:100%;display:block}
       <h2 class="heading reveal" style="--d:.08s">QHF EMOTION <em>baka El Shaklan.</em></h2>
       <p class="sub reveal" style="--d:.14s">Stallion <b>Purebred Arabian 100%</b> yang diimport dari Australia, dari bloodline <b>El Shaklan</b> — salah satu bloodline Arabian paling berpengaruh di dunia, terbukti di showring dan endurance.</p>
       <dl class="anthem-facts reveal" style="--d:.2s"><div><dt>Pendaftaran</dt><dd>QHF EMOTION (AU) S26767</dd></div><div><dt>Baka</dt><dd>Purebred Arabian, ketulenan 100%</dd></div><div><dt>Bloodline</dt><dd>El Shaklan</dd></div><div><dt>Strain</dt><dd>A Kehailan Dajani</dd></div><div><dt>Tarikh lahir</dt><dd>28 Ogos 2011</dd></div><div><dt>Warna</dt><dd>Grey (born Bay)</dd></div><div><dt>Asal</dt><dd>Diimport dari Australia</dd></div><div><dt>Penternak</dt><dd>Alison Louise Hudson</dd></div></dl>
+      <div class="actions reveal" style="--d:.26s">
+        <a class="btn btn-gold" href="#breeding-emotion">PAKEJ BREEDING RM3,000 <span class="arrow">↓</span></a>
+        <a class="btn btn-ghost" href="https://studbook.azurewebsites.net/Horses/Pedigree/283481" target="_blank" rel="noopener">LIHAT SUSUR GALUR <span class="arrow">↗</span></a>
+      </div>
     </div>
   </div>
   <div class="wrap anthem-more">
@@ -642,6 +666,7 @@ img,video{max-width:100%;display:block}
       <dl class="anthem-facts reveal" style="--d:.2s"><div><dt>Pendaftaran</dt><dd>SANSKRIT (AU) MYS59</dd></div><div><dt>Baka</dt><dd>Arabian (Malaysia), ketulenan 100%</dd></div><div><dt>Strain</dt><dd>A Seglawi Jedrani of Ibn Sudan</dd></div><div><dt>Jantina</dt><dd>Jantan (stallion)</dd></div><div><dt>Tarikh lahir</dt><dd>2 Disember 2022</dd></div><div><dt>Warna</dt><dd>Bay</dd></div><div><dt>Penternak</dt><dd>Lucy Ashley</dd></div><div><dt>Pemilik</dt><dd>Wan Muhd Izzat Bin Wan Hussin, Malaysia</dd></div></dl>
       <div class="actions reveal" style="--d:.26s">
         <a class="btn btn-gold" href="https://wa.me/60132993525?text=Salam%20Naami%20Stable%2C%20saya%20ingin%20bertanya%20tentang%20SANSKRIT." target="_blank" rel="noopener">TANYA TENTANG SANSKRIT <span class="arrow">↗</span></a>
+        <a class="btn btn-ghost" href="https://studbook.azurewebsites.net/Horses/Pedigree/312404" target="_blank" rel="noopener">LIHAT SUSUR GALUR <span class="arrow">↗</span></a>
       </div>
     </div>
   </div>
@@ -651,6 +676,40 @@ img,video{max-width:100%;display:block}
       <dl><div><dt>Nama</dt><dd>SANSKRIT (AU) MYS59</dd></div><div><dt>Breed / Index</dt><dd>Arabian (Malaysia)</dd></div><div><dt>Purity</dt><dd>100.00%</dd></div><div><dt>Strain</dt><dd>A Seglawi Jedrani Of Ibn Sudan</dd></div><div><dt>Sex</dt><dd>Male</dd></div><div><dt>DOB</dt><dd>02 Dec 2022</dd></div><div><dt>Colour</dt><dd>Bay</dd></div><div><dt>Deceased</dt><dd>No</dd></div><div><dt>Geld date</dt><dd>N/A</dd></div><div class="wide"><dt>Markings</dt><dd>Star conj 1/4 strip. Faint snip onto up lp. Patch n.s. lo lip. n.f. 1/4 fet 1/2 can beh outs. o.f. fet hi beh outs. o.h. fet 1/4 can beh ins.</dd></div><div><dt>Brands</dt><dd>Nil</dd></div><div><dt>DNA</dt><dd>D1094415 — parentage verified to both sire and dam</dd></div><div><dt>Blood type</dt><dd>No data recorded</dd></div><div><dt>Microchip</dt><dd>98514004443660</dd></div><div><dt>Vet report</dt><dd>Yes</dd></div><div class="wide"><dt>Genetic results</dt><dd>SCID – Results withheld, LFS – Results withheld, CA – Results withheld, OAAM – No data recorded</dd></div><div><dt>Breeder</dt><dd>Lucy Ashley</dd></div><div><dt>UELN</dt><dd>036004000310698</dd></div><div><dt>Owner</dt><dd>Wan Muhd Izzat Bin Wan Hussin (87982)</dd></div><div><dt>Leasee</dt><dd>No data recorded</dd></div><div><dt>Original registration number</dt><dd>S29306</dd></div><div><dt>Original registry</dt><dd>Arabian Horse Society of Australia</dd></div><div><dt>Status</dt><dd>Active</dd></div></dl>
     </div>
   </div>
+  </div>
+</section>
+
+<section class="section section-light konsultan" id="konsultan">
+  <div class="wrap">
+    <div class="k-grid">
+      <div class="mosaic reveal" aria-label="Gambar konsultasi kuda luar negara"><button class="tile t1" data-lightbox="assets/konsultan-01.jpg" aria-label="Lihat gambar dalam saiz penuh"><img class="on" src="assets/konsultan-01-sm.jpg" data-full="assets/konsultan-01.jpg" alt="Kuda Arabian grey dipimpin di gelanggang pertandingan luar negara" loading="lazy"><img data-src="assets/konsultan-04-sm.jpg" data-full="assets/konsultan-04.jpg" alt="Kuda chestnut di dalam float pengangkutan semasa proses penghantaran" loading="lazy"></button><button class="tile t2" data-lightbox="assets/konsultan-02.jpg" aria-label="Lihat gambar dalam saiz penuh"><img class="on" src="assets/konsultan-02-sm.jpg" data-full="assets/konsultan-02.jpg" alt="Kuda Arabian grey memakai selempang juara di pertandingan luar negara" loading="lazy"></button><button class="tile t3" data-lightbox="assets/konsultan-03.jpg" aria-label="Lihat gambar dalam saiz penuh"><img class="on" src="assets/konsultan-03-sm.jpg" data-full="assets/konsultan-03.jpg" alt="Kuda muda menerima trofi juara di pertandingan luar negara" loading="lazy"></button><span class="anthem-chip k-chip" aria-hidden="true">🌏 Australia · New Zealand · Argentina</span><span class="m-count" aria-hidden="true">4 foto</span></div>
+      <div>
+        <div class="kicker reveal">PERKHIDMATAN KHAS · CONSULTANT KUDA NAAMI STABLE</div>
+        <h2 class="heading reveal" style="--d:.08s">Overseas Horse Sourcing <em>&amp; Buying Consultancy.</em></h2>
+        <p class="k-tag reveal" style="--d:.12s">Your Trusted Partner in Finding the Right Horse.</p>
+        <p class="sub reveal" style="--d:.14s">Naami Stable menyediakan khidmat pencarian dan konsultasi pembelian kuda dari luar negara mengikut keperluan, matlamat dan bajet pelanggan.</p>
+        <p class="sub reveal" style="--d:.18s">Dengan pengalaman membawa masuk kuda dari <b>Australia</b> dan <b>New Zealand</b>, serta pengalaman konsultasi pembelian bersama stable dari <b>Argentina</b>, kami membantu pelanggan mencari kuda yang sesuai untuk <b>Endurance, Show Ring, Sport Horse</b> atau <b>Personal Riding</b>.</p>
+        <div class="actions reveal" style="--d:.24s">
+          <a class="btn btn-blue" href="https://wa.me/60132993525?text=Salam%20Naami%20Stable%2C%20saya%20berminat%20dengan%20khidmat%20konsultasi%20pencarian%20dan%20pembelian%20kuda%20dari%20luar%20negara." target="_blank" rel="noopener">KONSULTASI SEKARANG <span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="kicker reveal" style="margin-top:80px">OUR SERVICES · PERKHIDMATAN KAMI</div>
+    <ul class="k-services" style="margin-top:22px">
+      <li class="reveal"><span>🌍</span><b>Overseas Horse Sourcing</b><p>Membantu mencari kuda dari pasaran antarabangsa.</p></li>
+      <li class="reveal" style="--d:.06s"><span>🏆</span><b>Endurance &amp; Show Ring Selection</b><p>Pemilihan kuda mengikut disiplin dan keperluan pelanggan.</p></li>
+      <li class="reveal" style="--d:.12s"><span>💰</span><b>Budget-Based Consultation</b><p>Cadangan kuda berdasarkan kehendak dan bajet anda.</p></li>
+      <li class="reveal" style="--d:.18s"><span>🩺</span><b>Pre-Purchase Assessment</b><p>Membantu menyelaras pemeriksaan veterinar sebelum pembelian.</p></li>
+      <li class="reveal" style="--d:.24s"><span>✈️</span><b>Purchase &amp; Import Assistance</b><p>Bimbingan berkaitan pembelian, penghantaran dan proses import kuda.</p></li>
+    </ul>
+    <div class="k-commit reveal">
+      <div>
+        <div class="kicker" style="color:var(--sky)">OUR COMMITMENT · KOMITMEN KAMI</div>
+        <h3>You share your goals and budget. We help you find the right horse.</h3>
+        <p>Kami percaya setiap pelanggan berhak mendapatkan kuda yang sesuai dengan matlamat, disiplin dan bajet masing-masing.</p>
+      </div>
+      <blockquote>Connecting the Right Horse with the Right Owner.<small>— Naami Stable</small></blockquote>
+    </div>
   </div>
 </section>
 
