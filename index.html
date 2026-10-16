@@ -12,7 +12,7 @@
 <link rel="icon" href="assets/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#070d16;--navy:#0d1828;--panel:#111f33;--line:#ffffff1f;
@@ -213,6 +213,14 @@ img,video{max-width:100%;display:block}
 .sale-marks dl div{padding:10px 0;border-top:1px solid #15223314}
 .sale-marks dt{color:#117fce;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 .sale-marks dd{margin:3px 0 0;color:#3f4f5f;font-size:13.5px;line-height:1.55}
+.hadis{background:radial-gradient(ellipse at 50% 0%,#e6c36a1f,transparent 60%),var(--navy);text-align:center;padding:100px 0}
+.hadis .wrap{max-width:860px}
+.hadis-mark{font-size:30px;color:#e6c36a;line-height:1}
+.hadis .kicker{color:#e6c36a;margin-top:14px}
+.hadis-ar{font-family:'Amiri',serif;font-size:clamp(26px,3.6vw,40px);line-height:1.9;color:#fff;margin:24px 0 18px;direction:rtl}
+.hadis-ms{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,2.2vw,23px);line-height:1.65;color:#e5ebf2;margin:0 auto;max-width:720px}
+.hadis-src{margin-top:22px;color:var(--muted);font-size:13px;letter-spacing:.04em}
+.hadis-src b{color:#e6c36a;font-weight:700}
 .kuda-head{text-align:center;margin-bottom:56px}
 .kuda-head .sub{margin:0 auto}
 .kuda-jump{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
@@ -512,6 +520,16 @@ img,video{max-width:100%;display:block}
         <div><strong><span data-count="12">12</span> km</strong><small>Beach Outride</small></div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section hadis" aria-labelledby="hadis-title">
+  <div class="wrap">
+    <div class="hadis-mark reveal" aria-hidden="true">۞</div>
+    <div class="kicker reveal" id="hadis-title" style="--d:.06s">SUNNAH BERKUDA · DARIPADA ANAS BIN MALIK RA</div>
+    <p class="hadis-ar reveal" lang="ar" dir="rtl" style="--d:.12s">اسْتَعَارَ النَّبِيُّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ فَرَسًا مِنْ أَبِي طَلْحَةَ يُقَالُ لَهُ الْمَنْدُوبُ فَرَكِبَ</p>
+    <p class="hadis-ms reveal" style="--d:.18s">“Nabi SAW meminjam seekor kuda milik Abu Talhah yang dinamakan Al-Mandub, lalu Baginda menunggangnya.”</p>
+    <div class="hadis-src reveal" style="--d:.24s">Riwayat al-Bukhari, hadis 2867 — <b>Sahih</b></div>
   </div>
 </section>
 
